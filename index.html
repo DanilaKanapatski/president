@@ -9,7 +9,13 @@
 <body>
 <main>
     <section class="header">
-        <img class="header-img" src="assets/images/header-1.png" alt="">
+        <picture class="header-img">
+            <source media="(min-width: 2300px)" srcset="assets/images/header-5.png">
+            <source media="(min-width: 1920px)" srcset="assets/images/header-4.png">
+            <source media="(min-width: 1728px)" srcset="assets/images/header-3.png">
+            <source media="(min-width: 1515px)" srcset="assets/images/header-2.png">
+            <img src="assets/images/header-1.png" alt="">
+        </picture>
         <div class="header-block">
                 <ul class="header-list">
                     <li><a href="#addition">О продукте</a></li>
@@ -33,8 +39,12 @@
             </li>
             <li>
                 <img src="assets/images/addition-2.png" alt="">
-                <p>Быстрый перекус
+                <p class="tablet">Быстрый перекус
                     на пикнике или<br>
+                    в офисе</p>
+
+                <p class="desc">Быстрый перекус <br>
+                    на пикнике или
                     в офисе</p>
             </li>
             <li>
@@ -44,7 +54,14 @@
         </ul>
     </section>
     <section id="quality" class="quality">
-        <img class="quality-img" src="assets/images/quality-1.png" alt="">
+
+        <picture class="quality-img">
+            <source media="(min-width: 2300px)" srcset="assets/images/quality-1.4.png">
+            <source media="(min-width: 1920px)" srcset="assets/images/quality-1.3.png">
+            <source media="(min-width: 1728px)" srcset="assets/images/quality-1.2.png">
+            <source media="(min-width: 1515px)" srcset="assets/images/quality-1.1.png">
+            <img src="assets/images/quality-1.png" alt="">
+        </picture>
         <h2 class="quality-title">высокие стандарты качества</h2>
         <ul class="quality-list">
             <li>
@@ -62,9 +79,21 @@
             </li>
         </ul>
     </section>
-    <section id="min" class="main">
-        <img class="main-img1" src="assets/images/main-1.png" alt="">
-        <img class="main-img2" src="assets/images/main-2.png" alt="">
+    <section id="main" class="main">
+
+        <picture class="main-img1">
+            <source media="(min-width: 1920px)" srcset="assets/images/main-1.3.png">
+            <source media="(min-width: 1728px)" srcset="assets/images/main-1.2.png">
+            <source media="(min-width: 1515px)" srcset="assets/images/main-1.1.png">
+            <img src="assets/images/main-1.png" alt="">
+        </picture>
+        <picture class="main-img2">
+            <source media="(min-width: 2300px)" srcset="assets/images/main-2.4.png">
+            <source media="(min-width: 1920px)" srcset="assets/images/main-2.3.png">
+            <source media="(min-width: 1728px)" srcset="assets/images/main-2.2.png">
+            <source media="(min-width: 1515px)" srcset="assets/images/main-2.1.png">
+            <img src="assets/images/main-2.png" alt="">
+        </picture>
         <div class="compare" data-compare>
             <!-- Нижний слой: паприка -->
             <div class="compare__layer compare__layer--bottom">
@@ -95,7 +124,14 @@
         </div>
     </section>
     <section id="taste" class="taste">
-        <img class="taste-img" src="assets/images/taste-back-1.png" alt="">
+
+        <picture class="taste-img">
+            <source media="(min-width: 2300px)" srcset="assets/images/taste-back-1.4.png">
+            <source media="(min-width: 1920px)" srcset="assets/images/taste-back-1.3.png">
+            <source media="(min-width: 1728px)" srcset="assets/images/taste-back-1.2.png">
+            <source media="(min-width: 1515px)" srcset="assets/images/taste-back-1.1.png">
+            <img  src="assets/images/taste-back-1.png" alt="">
+        </picture>
         <h2 class="taste-title">Вдохновляйтесь с Président</h2>
         <p class="taste-desc">Откройте для себя новые грани вкуса.<br>
             Мы собрали идеи идеальных закусок, которые станут еще вкуснее с сырным соусом My Cheese</p>
