@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro Variable';
+    src: url('assets/fonts/TTNormsPro/ttf/TTNormsPro-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro Variable';
+    src: url('assets/fonts/TTNormsPro/ttf/TTNormsPro-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro Variable';
+    src: url('assets/fonts/TTNormsPro/ttf/TTNormsPro-Normal.ttf') format('ttf');
+    font-weight: 450;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro Variable';
+    src: url('assets/fonts/TTNormsPro/ttf/TTNormsPro-DemiBold.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'TT Norms Pro Variable', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/*header*/
+
+.header-img {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-block {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 131px 22px 202px;
+    width: 100%;
+    background-image: url("assets/images/header-back-1.svg");
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+
+.header-list {
+    display: flex;
+    gap: 86px;
+}
+
+.header-list a {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*addition*/
+
+.addition {
+    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 69px 0 80px;
+
+}
+
+.addition-title {
+    max-width: 1298px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 59px;
+    line-height: 1.21818;
+    text-align: center;
+    text-transform: uppercase;
+    color: #b50005;
+}
+
+.addition-list {
+    margin-top: 56px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.addition-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 419px;
+}
+
+.addition-list li p {
+    max-width: 287px;
+    margin-top: 28px;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 1.06422;
+    text-align: center;
+    color: #b50005;
+}
+
+.addition-list li img {
+    width: 100%;
+}
+
+/*quality*/
+
+.quality {
+    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 76px 0 177px 57px;
+    position: relative;
+    overflow-x: clip;
+}
+
+.quality-img {
+    position: absolute;
+    top: -74px;
+    right: -194px;
+    width: 1193px;
+    height: 100%;
+}
+
+.quality-title {
+    padding-left: 19px;
+    max-width: 580px;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 1.27273;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.quality-list {
+    margin-top: 74px;
+    display: flex;
+    gap: 27px;
+}
+
+.quality-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quality-list li:nth-child(2) p {
+    max-width: 180px;
+}
+
+.quality-list p {
+    margin-top: 16px;
+    max-width: 218px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    text-align: center;
+    color: #fff;
+}
+
+/*compare*/
+
+.main {
+    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 89px 0 78px;
+    position: relative;
+    overflow-x: clip;
+}
+
+.main-img1 {
+    position: absolute;
+    top: -213px;
+    left: 0;
+}
+
+.main-img2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.compare {
+    --pos: 50%;                     /* положение линии, меняется из JS */
+    position: relative;
+    width: 100%;
+    max-width: 1299px;
+    aspect-ratio: 1299 / 705;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    user-select: none;
+    touch-action: pan-y;            /* вертикальный скролл на телефоне не ломается */
+    cursor: ew-resize;
+}
+
+/* Слой с картинкой и текстом */
+.compare__layer {
+    position: absolute;
+    inset: 0;
+}
+
+.compare__layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Затемнение поверх картинки (Linear 40% из Figma).
+   Вставь сюда точный градиент из Inspect Styles */
+.compare__layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180.19deg, rgba(191, 2, 6, 0) 53.76%, rgba(153, 2, 5, 0.15) 73.39%, rgba(89, 1, 3, 0.4) 99.99%);
+    pointer-events: none;
+}
+
+/* Верхний слой (чеддер) обрезается по линии */
+.compare__layer--top {
+    z-index: 2;
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+/* Текст внутри слоя */
+.compare__text {
+    position: absolute;
+    z-index: 1;
+    top: 42px;
+    left: 44px;
+    max-width: 399px;
+    color: #fff;
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.compare__title {
+    margin: 0 0 30px;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 1.2052;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.compare__desc {
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 1.24071;
+    color: #fff;
+    max-width: 240px;
+}
+
+/* Текст плавно уходит, когда линия его почти закрыла */
+.compare.is-left  .compare__layer--top    .compare__text,
+.compare.is-right .compare__layer--bottom .compare__text {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+/* Линия */
+.compare__line {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 1px;
+    background: #fff;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Кружок со стрелками */
+.compare__handle {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: var(--pos);
+    width: 86px;
+    height: 86px;
+    padding: 0;
+    border: 1.19px solid #58060a;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.89);
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    display: grid;
+    place-items: center;
+    transition: transform .2s ease;
+}
+
+.compare__handle:active,
+.compare.is-dragging .compare__handle {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(0.94);
+}
+
+.compare__handle:focus-visible {
+    outline: 3px solid #ffd191;
+    outline-offset: 4px;
+}
+
+/* Плавный переезд при клике (не при перетягивании) */
+.compare.is-animating .compare__layer--top { transition: clip-path .45s cubic-bezier(.22, .8, .3, 1); }
+.compare.is-animating .compare__line,
+.compare.is-animating .compare__handle  { transition: left .45s cubic-bezier(.22, .8, .3, 1), transform .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+    .compare *, .compare.is-animating * { transition: none !important; }
+}
+
+/*taste*/
+
+.taste {
+    position: relative;
+    padding: 83px 0 84px 0;
+    z-index: 2;
+    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+}
+
+.taste-img {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.taste-title {
+    z-index: 2;
+    position: relative;
+    margin: 0 auto;
+    max-width: 827px;
+    font-weight: 700;
+    font-size: 76px;
+    line-height: 1.24677;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffd191;
+}
+
+.taste-desc {
+    z-index: 2;
+    position: relative;
+    max-width: 731px;
+    margin: 35px auto 0;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    color: #ffd191;
+}
+
+.taste-list {
+    z-index: 2;
+    position: relative;
+    margin-top: 71px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.taste-list li {
+    border-radius: 13px;
+    width: 413px;
+    background: #ffd191;
+    padding: 16px 18px 17px 18px;
+}
+
+.taste-list li img {
+    width: 100%;
+}
+
+.taste-list__title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.04893;
+    color: #8d0701;
+}
+
+.taste-list__desc {
+    margin-top: 17px;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 1.24071;
+    color: #8d0701;
+}
+
+.taste-list__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+    border-radius: 7px;
+    width: 378px;
+    height: 59px;
+    background: #8d0701;
+    font-weight: 500;
+    font-size: 23px;
+    color: #ffd191;
+}
+
+/*try*/
+
+.try {
+    background-image: url("assets/images/try-1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 78px 0 76px 71px;
+}
+
+.try-title {
+    max-width: 827px;
+    font-weight: 700;
+    font-size: 76px;
+    line-height: 1.15706;
+    text-transform: uppercase;
+    color: #efefef;
+}
+
+.try-desc {
+    margin-top: 33px;
+    max-width: 448px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    color: #efefef;
+}
+
+.try-block {
+    margin-top: 89px;
+}
+
+.try-block p {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    color: #efefef;
+}
+
+.try-list {
+    display: flex;
+    gap: 9px;
+}
+
+.try-list li {
+    margin-top: 16px;
+    border-radius: 8px;
+    width: 186px;
+    height: 69px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*footer*/
+
+.footer {
+    padding: 69px 0 80px 0;
+
+    background: #efefef;
+}

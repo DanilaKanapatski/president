@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>President</title>
+</head>
+<body>
+<main>
+    <section class="header">
+        <img class="header-img" src="assets/images/header-1.png" alt="">
+        <div class="header-block">
+                <ul class="header-list">
+                    <li><a href="#addition">О продукте</a></li>
+                    <li><a href="#quality">Преимущества</a></li>
+                </ul>
+                <img src="assets/images/header-logo-1.svg" alt="">
+                <ul class="header-list">
+                    <li><a href="#main">Вкусы</a></li>
+                    <li><a href="#taste">Рецепты</a></li>
+                    <li><a href="#try">Где купить</a></li>
+                </ul>
+        </div>
+    </section>
+    <section id="addition" class="addition">
+        <h2 class="addition-title">Идеальное дополнение
+            к любой закуске</h2>
+        <ul class="addition-list">
+            <li>
+                <img src="assets/images/addition-1.png" alt="">
+                <p>Просмотр любимого сериала</p>
+            </li>
+            <li>
+                <img src="assets/images/addition-2.png" alt="">
+                <p>Быстрый перекус
+                    на пикнике или<br>
+                    в офисе</p>
+            </li>
+            <li>
+                <img src="assets/images/addition-3.png" alt="">
+                <p>Встречи с родными и друзьями</p>
+            </li>
+        </ul>
+    </section>
+    <section id="quality" class="quality">
+        <img class="quality-img" src="assets/images/quality-1.png" alt="">
+        <h2 class="quality-title">высокие стандарты качества</h2>
+        <ul class="quality-list">
+            <li>
+                <img src="assets/images/quality-1.svg" alt="">
+                <p>Сделан на основе полутвердого сыра
+                    Чеддер</p>
+            </li>
+            <li>
+                <img src="assets/images/quality-2.svg" alt="">
+                <p>Подходит для горячих и холодных блюд</p>
+            </li>
+            <li>
+                <img src="assets/images/quality-3.svg" alt="">
+                <p>Без растительных<br> жиров и искусственных красителей</p>
+            </li>
+        </ul>
+    </section>
+    <section id="min" class="main">
+        <img class="main-img1" src="assets/images/main-1.png" alt="">
+        <img class="main-img2" src="assets/images/main-2.png" alt="">
+        <div class="compare" data-compare>
+            <!-- Нижний слой: паприка -->
+            <div class="compare__layer compare__layer--bottom">
+                <img src="assets/images/compare-1.png" alt="Сыр My Cheese со вкусом паприки">
+                <div class="compare__text">
+                    <h3 class="compare__title">Ароматный Чеддер</h3>
+                    <p class="compare__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для
+                        хрустящих кукурузных начос и золотистого картофеля <br>по-деревенски</p>
+                </div>
+            </div>
+
+            <!-- Верхний слой: чеддер -->
+            <div class="compare__layer compare__layer--top">
+                <img src="assets/images/compare-2.png" alt="Сыр My Cheese со вкусом чеддера">
+                <div class="compare__text">
+                    <h3 class="compare__title">Ароматный чеддер</h3>
+                    <p class="compare__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для
+                        хрустящих кукурузных начос и золотистого картофеля <br>по-деревенски</p>
+                </div>
+            </div>
+
+            <div class="compare__line"></div>
+
+            <button class="compare__handle" type="button" role="slider"
+                    aria-label="Сравнить вкусы" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <img src="assets/images/btn-1.svg" alt="" draggable="false">
+            </button>
+        </div>
+    </section>
+    <section id="taste" class="taste">
+        <img class="taste-img" src="assets/images/taste-back-1.png" alt="">
+        <h2 class="taste-title">Вдохновляйтесь с Président</h2>
+        <p class="taste-desc">Откройте для себя новые грани вкуса.<br>
+            Мы собрали идеи идеальных закусок, которые станут еще вкуснее с сырным соусом My Cheese</p>
+        <ul class="taste-list">
+            <li>
+                <img src="assets/images/taste-1.png" alt="">
+                <h3 class="taste-list__title">Хрустящие начос с гуакамоле и чеддером</h3>
+                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
+                <a class="taste-list__link" href="">Подробнее</a>
+            </li>
+            <li>
+                <img src="assets/images/taste-2.png" alt="">
+                <h3 class="taste-list__title">Запеченный картофель с беконом и паприкой</h3>
+                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
+                <a class="taste-list__link" href="">Подробнее</a>
+            </li>
+            <li>
+                <img src="assets/images/taste-3.png" alt="">
+                <h3 class="taste-list__title">Гриссини в пармской ветчине с сырным дипом</h3>
+                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
+                <a class="taste-list__link" href="">Подробнее</a>
+            </li>
+        </ul>
+    </section>
+    <section id="try" class="try">
+        <h2 class="try-title">Готовы попробовать?</h2>
+        <p class="try-desc">Закажите новую линейку Président My Cheese прямо сейчас с быстрой доставкой или найдите на полках любимого супермаркета!</p>
+        <div class="try-block">
+            <p>Купить на:</p>
+            <ul class="try-list">
+                <li>
+                    <img src="assets/images/buy-1.svg" alt="">
+                </li>
+                <li>
+                    <img src="assets/images/buy-2.svg" alt="">
+                </li>
+                <li>
+                    <img src="assets/images/buy-3.svg" alt="">
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+    <footer class="footer">
+        <div class="container">
+            <img src="assets/images/footer-logo-1.svg" alt="">
+        </div>
+    </footer>
+<script src="slider.js"></script>
+</body>
+</html>
