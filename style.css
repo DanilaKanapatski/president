@@ -58,10 +58,493 @@ body {
     overflow-x: hidden;
 }
 
-@media screen and (max-width: 1514px) {
+
+.container {
+    max-width: 1246px;
+    margin: 0 auto;
+}
+
+/*header*/
+.header-img {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-img img {
+    width: 100%;
+}
+
+.header-block {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 562px 22px 632px;
+    width: 100%;
+    background-image: url("assets/images/header-back-5.svg");
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+.header-block img {
+    padding-left: 11px;
+}
+
+
+.header-list {
+    display: flex;
+    gap: 86px;
+}
+
+.header-list a {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*addition*/
+.addition {
+    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 109px 0 115px;
+
+}
+
+.addition-title {
+    max-width: 1121px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 77px;
+    line-height: 1.23215;
+    text-align: center;
+    text-transform: uppercase;
+    color: #b50005;
+}
+
+.addition-list {
+    margin-top: 56px;
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+}
+
+.addition-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 525px;
+}
+
+.addition-list li p {
+    max-width: 396px;
+    margin-top: 36px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 0.96451;
+    text-align: center;
+    color: #b50005;
+}
+
+.addition-list li:nth-child(2) p {
+    max-width: 492px;
+}
+
+.tablet {
+    display: none;
+}
+
+.desc {
+    display: block;
+}
+
+.addition-list li img {
+    width: 100%;
+}
+
+/*quality*/
+.quality {
+    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 138px 0 138px 308px;
+    position: relative;
+    overflow-x: clip;
+}
+
+.quality-img {
+    position: absolute;
+    top: -114px;
+    right: -220px;
+    width: 1855px;
+    height: 100%;
+}
+
+.quality-img img {
+    width: 100%;
+}
+
+.quality-title {
+    padding-left: 7px;
+    max-width: 580px;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1.15262;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.quality-list {
+    margin-top: 91px;
+    display: flex;
+    gap: 35px;
+}
+
+.quality-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quality-list li:nth-child(2) p {
+    max-width: 190px;
+}
+
+.quality-list li:nth-child(3) p {
+    max-width: 285px;
+}
+
+.quality-list p {
+    margin-top: 17px;
+    max-width: 247px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.1;
+    text-align: center;
+    color: #fff;
+}
+
+/*compare*/
+.main {
+    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    padding: 109px 0 130px;
+    position: relative;
+    overflow-x: clip;
+}
+
+.main-img1 {
+    display: none;
+}
+
+.main-img2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main-img2 img {
+    width: 100%;
+}
+
+.compare {
+    --pos: 50%; /* положение линии, меняется из JS */
+    position: relative;
+    width: 100%;
+    max-width: 1596px;
+    aspect-ratio: 1596 / 866;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    user-select: none;
+    touch-action: pan-y; /* вертикальный скролл на телефоне не ломается */
+    cursor: ew-resize;
+}
+
+/* Слой с картинкой и текстом */
+.compare__layer {
+    position: absolute;
+    inset: 0;
+}
+
+.compare__layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Затемнение поверх картинки (Linear 40% из Figma).
+   Вставь сюда точный градиент из Inspect Styles */
+.compare__layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180.19deg, rgba(191, 2, 6, 0) 53.76%, rgba(153, 2, 5, 0.15) 73.39%, rgba(89, 1, 3, 0.4) 99.99%);
+    pointer-events: none;
+}
+
+/* Верхний слой (чеддер) обрезается по линии */
+.compare__layer--top {
+    z-index: 2;
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+/* Текст внутри слоя */
+.compare__text {
+    position: absolute;
+    z-index: 1;
+    top: 52px;
+    left: 54px;
+    max-width: 480px;
+    color: #fff;
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.compare__title {
+    margin: 0 0 40px;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1.05581;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.compare__desc {
+    font-weight: 450;
+    font-size: 20px;
+    line-height: 1.09159;
+    color: #fff;
+    max-width: 365px;
+}
+
+/* Текст плавно уходит, когда линия его почти закрыла */
+.compare.is-left .compare__layer--top .compare__text,
+.compare.is-right .compare__layer--bottom .compare__text {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+/* Линия */
+.compare__line {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 1px;
+    background: #fff;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Кружок со стрелками */
+.compare__handle {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: var(--pos);
+    width: 105px;
+    height: 105px;
+    padding: 0;
+    border: 1.19px solid #58060a;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.89);
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    display: grid;
+    place-items: center;
+    transition: transform .2s ease;
+}
+
+.compare__handle:active,
+.compare.is-dragging .compare__handle {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(0.94);
+}
+
+.compare__handle:focus-visible {
+    outline: 3px solid #ffd191;
+    outline-offset: 4px;
+}
+
+/* Плавный переезд при клике (не при перетягивании) */
+.compare.is-animating .compare__layer--top {
+    transition: clip-path .45s cubic-bezier(.22, .8, .3, 1);
+}
+
+.compare.is-animating .compare__line,
+.compare.is-animating .compare__handle {
+    transition: left .45s cubic-bezier(.22, .8, .3, 1), transform .2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .compare *, .compare.is-animating * {
+        transition: none !important;
+    }
+}
+
+/*taste*/
+.taste {
+    position: relative;
+    padding: 95px 0 116px 0;
+    z-index: 2;
+    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+}
+
+.taste-img {
+    position: absolute;
+    top: -144px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.taste-img img {
+    width: 100%;
+}
+
+.taste-title {
+    z-index: 2;
+    position: relative;
+    margin: 0 auto;
+    max-width: 827px;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1.18512;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffd191;
+}
+
+.taste-desc {
+    z-index: 2;
+    position: relative;
+    max-width: 731px;
+    margin: 35px auto 0;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.125;
+    text-align: center;
+    color: #ffd191;
+}
+
+.taste-list {
+    z-index: 2;
+    position: relative;
+    margin-top: 92px;
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+}
+
+.taste-list li {
+    border-radius: 13px;
+    width: 507px;
+    background: #ffd191;
+    padding: 20px 22px 21px 22px;
+}
+
+.taste-list li img {
+    width: 100%;
+}
+
+.taste-list__title {
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 1.04893;
+    color: #8d0701;
+}
+
+.taste-list__desc {
+    margin-top: 21px;
+    font-weight: 450;
+    font-size: 22px;
+    line-height: 1.24071;
+    color: #8d0701;
+}
+
+.taste-list__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 34px;
+    border-radius: 9px;
+    width: 463px;
+    height: 72px;
+    background: #8d0701;
+    font-weight: 500;
+    font-size: 28px;
+    color: #ffd191;
+}
+
+/*try*/
+.try {
+    background-image: url("assets/images/try-1.4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 85px 0 95px 308px;
+}
+
+.try-title {
+    max-width: 827px;
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 1.09985;
+    text-transform: uppercase;
+    color: #efefef;
+}
+
+.try-desc {
+    margin-top: 36px;
+    max-width: 490px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.125;
+    color: #efefef;
+}
+
+.try-block {
+    margin-top: 96px;
+}
+
+.try-block p {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #efefef;
+}
+
+.try-list {
+    display: flex;
+    gap: 9px;
+}
+
+.try-list li {
+    margin-top: 17px;
+    border-radius: 8px;
+    width: 204px;
+    height: 76px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*footer*/
+.footer {
+    padding: 56px 0 167px 0;
+    background: #efefef;
+}
+
+@media screen and (max-width: 2299px) {
 
     .container {
-        max-width: 1280px;
+        max-width: 1196px;
         margin: 0 auto;
     }
 
@@ -81,9 +564,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 131px 22px 202px;
+        padding: 14px 372px 22px 442px;
         width: 100%;
-        background-image: url("assets/images/header-back-1.svg");
+        background-image: url("assets/images/header-back-4.svg");
         z-index: 3;
         top: 0;
         left: 0;
@@ -92,6 +575,7 @@ body {
     .header-block img {
         padding-left: 11px;
     }
+
 
     .header-list {
         display: flex;
@@ -109,23 +593,23 @@ body {
     /*addition*/
     .addition {
         background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 69px 0 80px;
+        padding: 97px 0 97px;
 
     }
 
     .addition-title {
-        max-width: 1298px;
+        max-width: 953px;
         margin: 0 auto;
         font-weight: 700;
-        font-size: 59px;
-        line-height: 1.21818;
+        font-size: 68px;
+        line-height: 1.24853;
         text-align: center;
         text-transform: uppercase;
         color: #b50005;
     }
 
     .addition-list {
-        margin-top: 56px;
+        margin-top: 50px;
         display: flex;
         gap: 20px;
         justify-content: center;
@@ -139,40 +623,44 @@ body {
     }
 
     .addition-list li p {
-        max-width: 287px;
-        margin-top: 28px;
+        max-width: 317px;
+        margin-top: 29px;
         font-weight: 700;
-        font-size: 29px;
-        line-height: 1.06422;
+        font-size: 32px;
+        line-height: 0.96451;
         text-align: center;
         color: #b50005;
+    }
+
+    .addition-list li:nth-child(2) p {
+        max-width: 390px;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .desc {
+        display: block;
     }
 
     .addition-list li img {
         width: 100%;
     }
 
-    .tablet {
-        display: block;
-    }
-
-    .desc {
-        display: none;
-    }
-
     /*quality*/
     .quality {
         background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 76px 0 177px 57px;
+        padding: 96px 0 114px 311px;
         position: relative;
         overflow-x: clip;
     }
 
     .quality-img {
         position: absolute;
-        top: -74px;
-        right: -194px;
-        width: 1193px;
+        top: -81px;
+        right: -267px;
+        width: 1503px;
         height: 100%;
     }
 
@@ -181,19 +669,19 @@ body {
     }
 
     .quality-title {
-        padding-left: 19px;
+        padding-left: 7px;
         max-width: 580px;
         font-weight: 700;
-        font-size: 55px;
-        line-height: 1.27273;
+        font-size: 70px;
+        line-height: 1.15262;
         text-transform: uppercase;
         color: #fff;
     }
 
     .quality-list {
-        margin-top: 74px;
+        margin-top: 91px;
         display: flex;
-        gap: 27px;
+        gap: 30px;
     }
 
     .quality-list li {
@@ -204,14 +692,14 @@ body {
     }
 
     .quality-list li:nth-child(2) p {
-        max-width: 180px;
+        max-width: 190px;
     }
 
     .quality-list p {
-        margin-top: 16px;
+        margin-top: 17px;
         max-width: 218px;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.1;
         text-align: center;
         color: #fff;
@@ -220,14 +708,14 @@ body {
     /*compare*/
     .main {
         background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 89px 0 78px;
+        padding: 79px 0 94px;
         position: relative;
         overflow-x: clip;
     }
 
     .main-img1 {
         position: absolute;
-        top: -213px;
+        top: -361px;
         left: 0;
     }
 
@@ -300,491 +788,18 @@ body {
     .compare__title {
         margin: 0 0 30px;
         font-weight: 700;
-        font-size: 37px;
-        line-height: 1.2052;
+        font-size: 43px;
+        line-height: 1.05581;
         text-transform: uppercase;
         color: #fff;
     }
 
     .compare__desc {
         font-weight: 450;
-        font-size: 14px;
-        line-height: 1.24071;
-        color: #fff;
-        max-width: 240px;
-    }
-
-    /* Текст плавно уходит, когда линия его почти закрыла */
-    .compare.is-left .compare__layer--top .compare__text,
-    .compare.is-right .compare__layer--bottom .compare__text {
-        opacity: 0;
-        transform: translateX(-12px);
-    }
-
-    /* Линия */
-    .compare__line {
-        position: absolute;
-        z-index: 3;
-        top: 0;
-        bottom: 0;
-        left: var(--pos);
-        width: 1px;
-        background: #fff;
-        transform: translateX(-50%);
-        pointer-events: none;
-    }
-
-    /* Кружок со стрелками */
-    .compare__handle {
-        position: absolute;
-        z-index: 4;
-        top: 50%;
-        left: var(--pos);
-        width: 86px;
-        height: 86px;
-        padding: 0;
-        border: 1.19px solid #58060a;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.89);
-        transform: translate(-50%, -50%);
-        cursor: grab;
-        display: grid;
-        place-items: center;
-        transition: transform .2s ease;
-    }
-
-    .compare__handle:active,
-    .compare.is-dragging .compare__handle {
-        cursor: grabbing;
-        transform: translate(-50%, -50%) scale(0.94);
-    }
-
-    .compare__handle:focus-visible {
-        outline: 3px solid #ffd191;
-        outline-offset: 4px;
-    }
-
-    /* Плавный переезд при клике (не при перетягивании) */
-    .compare.is-animating .compare__layer--top {
-        transition: clip-path .45s cubic-bezier(.22, .8, .3, 1);
-    }
-
-    .compare.is-animating .compare__line,
-    .compare.is-animating .compare__handle {
-        transition: left .45s cubic-bezier(.22, .8, .3, 1), transform .2s ease;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .compare *, .compare.is-animating * {
-            transition: none !important;
-        }
-    }
-
-    /*taste*/
-    .taste {
-        position: relative;
-        padding: 83px 0 84px 0;
-        z-index: 2;
-        background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-    }
-
-    .taste-img {
-        position: absolute;
-        top: 46px;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-    }
-
-    .taste-img img {
-        width: 100%;
-    }
-
-    .taste-title {
-        z-index: 2;
-        position: relative;
-        margin: 0 auto;
-        max-width: 827px;
-        font-weight: 700;
-        font-size: 76px;
-        line-height: 1.24677;
-        text-align: center;
-        text-transform: uppercase;
-        color: #ffd191;
-    }
-
-    .taste-desc {
-        z-index: 2;
-        position: relative;
-        max-width: 731px;
-        margin: 35px auto 0;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.2;
-        text-align: center;
-        color: #ffd191;
-    }
-
-    .taste-list {
-        z-index: 2;
-        position: relative;
-        margin-top: 71px;
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-
-    .taste-list li {
-        border-radius: 13px;
-        width: 413px;
-        background: #ffd191;
-        padding: 16px 18px 17px 18px;
-    }
-
-    .taste-list li img {
-        width: 100%;
-    }
-
-    .taste-list__title {
-        margin-top: 20px;
-        font-weight: 700;
-        font-size: 25px;
-        line-height: 1.04893;
-        color: #8d0701;
-    }
-
-    .taste-list__desc {
-        margin-top: 17px;
-        font-weight: 450;
-        font-size: 18px;
-        line-height: 1.24071;
-        color: #8d0701;
-    }
-
-    .taste-list__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 27px;
-        border-radius: 7px;
-        width: 378px;
-        height: 59px;
-        background: #8d0701;
-        font-weight: 500;
-        font-size: 23px;
-        color: #ffd191;
-    }
-
-    /*try*/
-    .try {
-        background-image: url("assets/images/try-1.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        padding: 78px 0 76px 71px;
-    }
-
-    .try-title {
-        max-width: 827px;
-        font-weight: 700;
-        font-size: 76px;
-        line-height: 1.15706;
-        text-transform: uppercase;
-        color: #efefef;
-    }
-
-    .try-desc {
-        margin-top: 33px;
-        max-width: 448px;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.2;
-        color: #efefef;
-    }
-
-    .try-block {
-        margin-top: 89px;
-    }
-
-    .try-block p {
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.2;
-        color: #efefef;
-    }
-
-    .try-list {
-        display: flex;
-        gap: 9px;
-    }
-
-    .try-list li {
-        margin-top: 16px;
-        border-radius: 8px;
-        width: 186px;
-        height: 69px;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /*footer*/
-    .footer {
-        padding: 69px 0 80px 0;
-
-        background: #efefef;
-    }
-
-}
-
-@media screen and (max-width: 1727px) {
-
-    .container {
-        max-width: 1290px;
-        margin: 0 auto;
-    }
-
-    /*header*/
-    .header-img {
-        position: relative;
-        width: 100%;
-        z-index: 1;
-    }
-
-    .header-img img {
-        width: 100%;
-    }
-
-    .header-block {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 179px 22px 229px;
-        width: 100%;
-        background-image: url("assets/images/header-back-2.svg");
-        z-index: 3;
-        top: 0;
-        left: 0;
-    }
-
-    .header-block img {
-        padding-left: 13px;
-    }
-
-
-    .header-list {
-        display: flex;
-        gap: 86px;
-    }
-
-    .header-list a {
-        font-weight: 600;
         font-size: 16px;
-        text-align: center;
-        text-transform: uppercase;
+        line-height: 1.09159;
         color: #fff;
-    }
-
-    /*addition*/
-    .addition {
-        background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 63px 0 83px;
-
-    }
-
-    .addition-title {
-        max-width: 1298px;
-        margin: 0 auto;
-        font-weight: 700;
-        font-size: 59px;
-        line-height: 1.21818;
-        text-align: center;
-        text-transform: uppercase;
-        color: #b50005;
-    }
-
-    .addition-list {
-        margin-top: 46px;
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .addition-list li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 419px;
-    }
-
-    .addition-list li p {
-        max-width: 287px;
-        margin-top: 28px;
-        font-weight: 700;
-        font-size: 29px;
-        line-height: 1.06422;
-        text-align: center;
-        color: #b50005;
-    }
-
-    .addition-list li img {
-        width: 100%;
-    }
-
-    /*quality*/
-    .quality {
-        background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 65px 0 198px 108px;
-        position: relative;
-        overflow-x: clip;
-    }
-
-    .quality-img {
-        position: absolute;
-        top: -55px;
-        right: -150px;
-        width: 1252px;
-        height: 100%;
-    }
-
-    .quality-img img {
-        width: 100%;
-    }
-
-    .quality-title {
-        padding-left: 5px;
-        max-width: 580px;
-        font-weight: 700;
-        font-size: 55px;
-        line-height: 1.27273;
-        text-transform: uppercase;
-        color: #fff;
-    }
-
-    .quality-list {
-        margin-top: 64px;
-        display: flex;
-        gap: 27px;
-    }
-
-    .quality-list li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .quality-list li:nth-child(2) p {
-        max-width: 180px;
-    }
-
-    .quality-list p {
-        margin-top: 16px;
-        max-width: 218px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1.1;
-        text-align: center;
-        color: #fff;
-    }
-
-    /*compare*/
-    .main {
-        background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 89px 0 84px;
-        position: relative;
-        overflow-x: clip;
-    }
-
-    .main-img1 {
-        position: absolute;
-        top: -190px;
-        left: 0;
-    }
-
-    .main-img2 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    .main-img2 img {
-        width: 100%;
-    }
-
-    .compare {
-        --pos: 50%; /* положение линии, меняется из JS */
-        position: relative;
-        width: 100%;
-        max-width: 1299px;
-        aspect-ratio: 1299 / 705;
-        margin: 0 auto;
-        border-radius: 15px;
-        overflow: hidden;
-        user-select: none;
-        touch-action: pan-y; /* вертикальный скролл на телефоне не ломается */
-        cursor: ew-resize;
-    }
-
-    /* Слой с картинкой и текстом */
-    .compare__layer {
-        position: absolute;
-        inset: 0;
-    }
-
-    .compare__layer img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        pointer-events: none;
-    }
-
-    /* Затемнение поверх картинки (Linear 40% из Figma).
-       Вставь сюда точный градиент из Inspect Styles */
-    .compare__layer::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180.19deg, rgba(191, 2, 6, 0) 53.76%, rgba(153, 2, 5, 0.15) 73.39%, rgba(89, 1, 3, 0.4) 99.99%);
-        pointer-events: none;
-    }
-
-    /* Верхний слой (чеддер) обрезается по линии */
-    .compare__layer--top {
-        z-index: 2;
-        clip-path: inset(0 calc(100% - var(--pos)) 0 0);
-    }
-
-    /* Текст внутри слоя */
-    .compare__text {
-        position: absolute;
-        z-index: 1;
-        top: 39px;
-        left: 44px;
-        max-width: 399px;
-        color: #fff;
-        transition: opacity .35s ease, transform .35s ease;
-    }
-
-    .compare__title {
-        margin: 0 0 30px;
-        font-weight: 700;
-        font-size: 37px;
-        line-height: 1.2052;
-        text-transform: uppercase;
-        color: #fff;
-    }
-
-    .compare__desc {
-        font-weight: 450;
-        font-size: 14px;
-        line-height: 1.24071;
-        color: #fff;
-        max-width: 240px;
+        max-width: 293px;
     }
 
     /* Текст плавно уходит, когда линия его почти закрыла */
@@ -856,14 +871,14 @@ body {
     /*taste*/
     .taste {
         position: relative;
-        padding: 83px 0 84px 0;
+        padding: 83px 0 71px 0;
         z-index: 2;
         background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
     }
 
     .taste-img {
         position: absolute;
-        top: 46px;
+        top: -11px;
         left: 0;
         width: 100%;
         z-index: 1;
@@ -879,8 +894,8 @@ body {
         margin: 0 auto;
         max-width: 827px;
         font-weight: 700;
-        font-size: 76px;
-        line-height: 1.24677;
+        font-size: 80px;
+        line-height: 1.18512;
         text-align: center;
         text-transform: uppercase;
         color: #ffd191;
@@ -892,8 +907,8 @@ body {
         max-width: 731px;
         margin: 35px auto 0;
         font-weight: 500;
-        font-size: 30px;
-        line-height: 1.2;
+        font-size: 32px;
+        line-height: 1.125;
         text-align: center;
         color: #ffd191;
     }
@@ -950,18 +965,18 @@ body {
 
     /*try*/
     .try {
-        background-image: url("assets/images/try-1.1.png");
+        background-image: url("assets/images/try-1.3.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        padding: 78px 0 76px 109px;
+        padding: 91px 0 146px 311px;
     }
 
     .try-title {
         max-width: 827px;
         font-weight: 700;
-        font-size: 76px;
-        line-height: 1.15706;
+        font-size: 80px;
+        line-height: 1.09985;
         text-transform: uppercase;
         color: #efefef;
     }
@@ -970,8 +985,8 @@ body {
         margin-top: 33px;
         max-width: 448px;
         font-weight: 500;
-        font-size: 30px;
-        line-height: 1.2;
+        font-size: 32px;
+        line-height: 1.125;
         color: #efefef;
     }
 
@@ -1004,8 +1019,7 @@ body {
 
     /*footer*/
     .footer {
-        padding: 57px 0 169px 0;
-
+        padding: 64px 0 159px 0;
         background: #efefef;
     }
 
@@ -1495,10 +1509,10 @@ body {
 
 }
 
-@media screen and (max-width: 2299px) {
+@media screen and (max-width: 1727px) {
 
     .container {
-        max-width: 1196px;
+        max-width: 1290px;
         margin: 0 auto;
     }
 
@@ -1518,16 +1532,16 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 372px 22px 442px;
+        padding: 14px 179px 22px 229px;
         width: 100%;
-        background-image: url("assets/images/header-back-4.svg");
+        background-image: url("assets/images/header-back-2.svg");
         z-index: 3;
         top: 0;
         left: 0;
     }
 
     .header-block img {
-        padding-left: 11px;
+        padding-left: 13px;
     }
 
 
@@ -1547,23 +1561,23 @@ body {
     /*addition*/
     .addition {
         background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 97px 0 97px;
+        padding: 63px 0 83px;
 
     }
 
     .addition-title {
-        max-width: 953px;
+        max-width: 1298px;
         margin: 0 auto;
         font-weight: 700;
-        font-size: 68px;
-        line-height: 1.24853;
+        font-size: 59px;
+        line-height: 1.21818;
         text-align: center;
         text-transform: uppercase;
         color: #b50005;
     }
 
     .addition-list {
-        margin-top: 50px;
+        margin-top: 46px;
         display: flex;
         gap: 20px;
         justify-content: center;
@@ -1577,25 +1591,13 @@ body {
     }
 
     .addition-list li p {
-        max-width: 317px;
-        margin-top: 29px;
+        max-width: 287px;
+        margin-top: 28px;
         font-weight: 700;
-        font-size: 32px;
-        line-height: 0.96451;
+        font-size: 29px;
+        line-height: 1.06422;
         text-align: center;
         color: #b50005;
-    }
-
-    .addition-list li:nth-child(2) p {
-        max-width: 390px;
-    }
-
-    .tablet {
-        display: none;
-    }
-
-    .desc {
-        display: block;
     }
 
     .addition-list li img {
@@ -1605,16 +1607,16 @@ body {
     /*quality*/
     .quality {
         background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 96px 0 114px 311px;
+        padding: 65px 0 198px 108px;
         position: relative;
         overflow-x: clip;
     }
 
     .quality-img {
         position: absolute;
-        top: -81px;
-        right: -267px;
-        width: 1503px;
+        top: -55px;
+        right: -150px;
+        width: 1252px;
         height: 100%;
     }
 
@@ -1623,19 +1625,19 @@ body {
     }
 
     .quality-title {
-        padding-left: 7px;
+        padding-left: 5px;
         max-width: 580px;
         font-weight: 700;
-        font-size: 70px;
-        line-height: 1.15262;
+        font-size: 55px;
+        line-height: 1.27273;
         text-transform: uppercase;
         color: #fff;
     }
 
     .quality-list {
-        margin-top: 91px;
+        margin-top: 64px;
         display: flex;
-        gap: 30px;
+        gap: 27px;
     }
 
     .quality-list li {
@@ -1646,14 +1648,14 @@ body {
     }
 
     .quality-list li:nth-child(2) p {
-        max-width: 190px;
+        max-width: 180px;
     }
 
     .quality-list p {
-        margin-top: 17px;
+        margin-top: 16px;
         max-width: 218px;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.1;
         text-align: center;
         color: #fff;
@@ -1662,14 +1664,494 @@ body {
     /*compare*/
     .main {
         background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-        padding: 79px 0 94px;
+        padding: 89px 0 84px;
         position: relative;
         overflow-x: clip;
     }
 
     .main-img1 {
         position: absolute;
-        top: -361px;
+        top: -190px;
+        left: 0;
+    }
+
+    .main-img2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .main-img2 img {
+        width: 100%;
+    }
+
+    .compare {
+        --pos: 50%; /* положение линии, меняется из JS */
+        position: relative;
+        width: 100%;
+        max-width: 1299px;
+        aspect-ratio: 1299 / 705;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+        user-select: none;
+        touch-action: pan-y; /* вертикальный скролл на телефоне не ломается */
+        cursor: ew-resize;
+    }
+
+    /* Слой с картинкой и текстом */
+    .compare__layer {
+        position: absolute;
+        inset: 0;
+    }
+
+    .compare__layer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+    }
+
+    /* Затемнение поверх картинки (Linear 40% из Figma).
+       Вставь сюда точный градиент из Inspect Styles */
+    .compare__layer::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180.19deg, rgba(191, 2, 6, 0) 53.76%, rgba(153, 2, 5, 0.15) 73.39%, rgba(89, 1, 3, 0.4) 99.99%);
+        pointer-events: none;
+    }
+
+    /* Верхний слой (чеддер) обрезается по линии */
+    .compare__layer--top {
+        z-index: 2;
+        clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+
+    /* Текст внутри слоя */
+    .compare__text {
+        position: absolute;
+        z-index: 1;
+        top: 39px;
+        left: 44px;
+        max-width: 399px;
+        color: #fff;
+        transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .compare__title {
+        margin: 0 0 30px;
+        font-weight: 700;
+        font-size: 37px;
+        line-height: 1.2052;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .compare__desc {
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 1.24071;
+        color: #fff;
+        max-width: 240px;
+    }
+
+    /* Текст плавно уходит, когда линия его почти закрыла */
+    .compare.is-left .compare__layer--top .compare__text,
+    .compare.is-right .compare__layer--bottom .compare__text {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    /* Линия */
+    .compare__line {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        bottom: 0;
+        left: var(--pos);
+        width: 1px;
+        background: #fff;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+
+    /* Кружок со стрелками */
+    .compare__handle {
+        position: absolute;
+        z-index: 4;
+        top: 50%;
+        left: var(--pos);
+        width: 86px;
+        height: 86px;
+        padding: 0;
+        border: 1.19px solid #58060a;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.89);
+        transform: translate(-50%, -50%);
+        cursor: grab;
+        display: grid;
+        place-items: center;
+        transition: transform .2s ease;
+    }
+
+    .compare__handle:active,
+    .compare.is-dragging .compare__handle {
+        cursor: grabbing;
+        transform: translate(-50%, -50%) scale(0.94);
+    }
+
+    .compare__handle:focus-visible {
+        outline: 3px solid #ffd191;
+        outline-offset: 4px;
+    }
+
+    /* Плавный переезд при клике (не при перетягивании) */
+    .compare.is-animating .compare__layer--top {
+        transition: clip-path .45s cubic-bezier(.22, .8, .3, 1);
+    }
+
+    .compare.is-animating .compare__line,
+    .compare.is-animating .compare__handle {
+        transition: left .45s cubic-bezier(.22, .8, .3, 1), transform .2s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .compare *, .compare.is-animating * {
+            transition: none !important;
+        }
+    }
+
+    /*taste*/
+    .taste {
+        position: relative;
+        padding: 83px 0 84px 0;
+        z-index: 2;
+        background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+    }
+
+    .taste-img {
+        position: absolute;
+        top: 46px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .taste-img img {
+        width: 100%;
+    }
+
+    .taste-title {
+        z-index: 2;
+        position: relative;
+        margin: 0 auto;
+        max-width: 827px;
+        font-weight: 700;
+        font-size: 76px;
+        line-height: 1.24677;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffd191;
+    }
+
+    .taste-desc {
+        z-index: 2;
+        position: relative;
+        max-width: 731px;
+        margin: 35px auto 0;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.2;
+        text-align: center;
+        color: #ffd191;
+    }
+
+    .taste-list {
+        z-index: 2;
+        position: relative;
+        margin-top: 71px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .taste-list li {
+        border-radius: 13px;
+        width: 413px;
+        background: #ffd191;
+        padding: 16px 18px 17px 18px;
+    }
+
+    .taste-list li img {
+        width: 100%;
+    }
+
+    .taste-list__title {
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 1.04893;
+        color: #8d0701;
+    }
+
+    .taste-list__desc {
+        margin-top: 17px;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 1.24071;
+        color: #8d0701;
+    }
+
+    .taste-list__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 27px;
+        border-radius: 7px;
+        width: 378px;
+        height: 59px;
+        background: #8d0701;
+        font-weight: 500;
+        font-size: 23px;
+        color: #ffd191;
+    }
+
+    /*try*/
+    .try {
+        background-image: url("assets/images/try-1.1.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 78px 0 76px 109px;
+    }
+
+    .try-title {
+        max-width: 827px;
+        font-weight: 700;
+        font-size: 76px;
+        line-height: 1.15706;
+        text-transform: uppercase;
+        color: #efefef;
+    }
+
+    .try-desc {
+        margin-top: 33px;
+        max-width: 448px;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.2;
+        color: #efefef;
+    }
+
+    .try-block {
+        margin-top: 89px;
+    }
+
+    .try-block p {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.2;
+        color: #efefef;
+    }
+
+    .try-list {
+        display: flex;
+        gap: 9px;
+    }
+
+    .try-list li {
+        margin-top: 16px;
+        border-radius: 8px;
+        width: 186px;
+        height: 69px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*footer*/
+    .footer {
+        padding: 57px 0 169px 0;
+
+        background: #efefef;
+    }
+
+}
+
+@media screen and (max-width: 1514px) {
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    /*header*/
+    .header-img {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .header-img img {
+        width: 100%;
+    }
+
+    .header-block {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 131px 22px 202px;
+        width: 100%;
+        background-image: url("assets/images/header-back-1.svg");
+        z-index: 3;
+        top: 0;
+        left: 0;
+    }
+
+    .header-block img {
+        padding-left: 11px;
+    }
+
+    .header-list {
+        display: flex;
+        gap: 86px;
+    }
+
+    .header-list a {
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    /*addition*/
+    .addition {
+        background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+        padding: 69px 0 80px;
+
+    }
+
+    .addition-title {
+        max-width: 1298px;
+        margin: 0 auto;
+        font-weight: 700;
+        font-size: 59px;
+        line-height: 1.21818;
+        text-align: center;
+        text-transform: uppercase;
+        color: #b50005;
+    }
+
+    .addition-list {
+        margin-top: 56px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .addition-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 419px;
+    }
+
+    .addition-list li p {
+        max-width: 287px;
+        margin-top: 28px;
+        font-weight: 700;
+        font-size: 29px;
+        line-height: 1.06422;
+        text-align: center;
+        color: #b50005;
+    }
+
+    .addition-list li img {
+        width: 100%;
+    }
+
+    .tablet {
+        display: block;
+    }
+
+    .desc {
+        display: none;
+    }
+
+    /*quality*/
+    .quality {
+        background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
+        padding: 76px 0 177px 57px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .quality-img {
+        position: absolute;
+        top: -74px;
+        right: -194px;
+        width: 1193px;
+        height: 100%;
+    }
+
+    .quality-img img {
+        width: 100%;
+    }
+
+    .quality-title {
+        padding-left: 19px;
+        max-width: 580px;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 1.27273;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .quality-list {
+        margin-top: 74px;
+        display: flex;
+        gap: 27px;
+    }
+
+    .quality-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quality-list li:nth-child(2) p {
+        max-width: 180px;
+    }
+
+    .quality-list p {
+        margin-top: 16px;
+        max-width: 218px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.1;
+        text-align: center;
+        color: #fff;
+    }
+
+    /*compare*/
+    .main {
+        background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
+        padding: 89px 0 78px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .main-img1 {
+        position: absolute;
+        top: -213px;
         left: 0;
     }
 
@@ -1742,18 +2224,18 @@ body {
     .compare__title {
         margin: 0 0 30px;
         font-weight: 700;
-        font-size: 43px;
-        line-height: 1.05581;
+        font-size: 37px;
+        line-height: 1.2052;
         text-transform: uppercase;
         color: #fff;
     }
 
     .compare__desc {
         font-weight: 450;
-        font-size: 16px;
-        line-height: 1.09159;
+        font-size: 14px;
+        line-height: 1.24071;
         color: #fff;
-        max-width: 293px;
+        max-width: 240px;
     }
 
     /* Текст плавно уходит, когда линия его почти закрыла */
@@ -1825,14 +2307,14 @@ body {
     /*taste*/
     .taste {
         position: relative;
-        padding: 83px 0 71px 0;
+        padding: 83px 0 84px 0;
         z-index: 2;
         background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
     }
 
     .taste-img {
         position: absolute;
-        top: -11px;
+        top: 46px;
         left: 0;
         width: 100%;
         z-index: 1;
@@ -1848,8 +2330,8 @@ body {
         margin: 0 auto;
         max-width: 827px;
         font-weight: 700;
-        font-size: 80px;
-        line-height: 1.18512;
+        font-size: 76px;
+        line-height: 1.24677;
         text-align: center;
         text-transform: uppercase;
         color: #ffd191;
@@ -1861,8 +2343,8 @@ body {
         max-width: 731px;
         margin: 35px auto 0;
         font-weight: 500;
-        font-size: 32px;
-        line-height: 1.125;
+        font-size: 30px;
+        line-height: 1.2;
         text-align: center;
         color: #ffd191;
     }
@@ -1919,18 +2401,18 @@ body {
 
     /*try*/
     .try {
-        background-image: url("assets/images/try-1.3.png");
+        background-image: url("assets/images/try-1.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        padding: 91px 0 146px 311px;
+        padding: 78px 0 76px 71px;
     }
 
     .try-title {
         max-width: 827px;
         font-weight: 700;
-        font-size: 80px;
-        line-height: 1.09985;
+        font-size: 76px;
+        line-height: 1.15706;
         text-transform: uppercase;
         color: #efefef;
     }
@@ -1939,8 +2421,8 @@ body {
         margin-top: 33px;
         max-width: 448px;
         font-weight: 500;
-        font-size: 32px;
-        line-height: 1.125;
+        font-size: 30px;
+        line-height: 1.2;
         color: #efefef;
     }
 
@@ -1973,493 +2455,16 @@ body {
 
     /*footer*/
     .footer {
-        padding: 64px 0 159px 0;
+        padding: 69px 0 80px 0;
+
         background: #efefef;
     }
 
 }
 
 
-.container {
-    max-width: 1246px;
-    margin: 0 auto;
-}
 
-/*header*/
-.header-img {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-}
 
-.header-img img {
-    width: 100%;
-}
 
-.header-block {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 562px 22px 632px;
-    width: 100%;
-    background-image: url("assets/images/header-back-5.svg");
-    z-index: 3;
-    top: 0;
-    left: 0;
-}
-
-.header-block img {
-    padding-left: 11px;
-}
-
-
-.header-list {
-    display: flex;
-    gap: 86px;
-}
-
-.header-list a {
-    font-weight: 600;
-    font-size: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-/*addition*/
-.addition {
-    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-    padding: 109px 0 115px;
-
-}
-
-.addition-title {
-    max-width: 1121px;
-    margin: 0 auto;
-    font-weight: 700;
-    font-size: 77px;
-    line-height: 1.23215;
-    text-align: center;
-    text-transform: uppercase;
-    color: #b50005;
-}
-
-.addition-list {
-    margin-top: 56px;
-    display: flex;
-    gap: 26px;
-    justify-content: center;
-}
-
-.addition-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 525px;
-}
-
-.addition-list li p {
-    max-width: 396px;
-    margin-top: 36px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 0.96451;
-    text-align: center;
-    color: #b50005;
-}
-
-.addition-list li:nth-child(2) p {
-    max-width: 492px;
-}
-
-.tablet {
-    display: none;
-}
-
-.desc {
-    display: block;
-}
-
-.addition-list li img {
-    width: 100%;
-}
-
-/*quality*/
-.quality {
-    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-    padding: 138px 0 138px 308px;
-    position: relative;
-    overflow-x: clip;
-}
-
-.quality-img {
-    position: absolute;
-    top: -114px;
-    right: -220px;
-    width: 1855px;
-    height: 100%;
-}
-
-.quality-img img {
-    width: 100%;
-}
-
-.quality-title {
-    padding-left: 7px;
-    max-width: 580px;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 1.15262;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.quality-list {
-    margin-top: 91px;
-    display: flex;
-    gap: 35px;
-}
-
-.quality-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.quality-list li:nth-child(2) p {
-    max-width: 190px;
-}
-
-.quality-list li:nth-child(3) p {
-    max-width: 285px;
-}
-
-.quality-list p {
-    margin-top: 17px;
-    max-width: 247px;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.1;
-    text-align: center;
-    color: #fff;
-}
-
-/*compare*/
-.main {
-    background: radial-gradient(28.53% 87.01% at 51.6% 33.05%, #ff653b 0%, #ff9d3a 22.11%, #ffc13a 66%) /* Радиальный градиент в Figma повернут на 89.36deg; обычный CSS radial-gradient() не поддерживает поворот */;
-    padding: 109px 0 130px;
-    position: relative;
-    overflow-x: clip;
-}
-
-.main-img1 {
-   display: none;
-}
-
-.main-img2 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.main-img2 img {
-    width: 100%;
-}
-
-.compare {
-    --pos: 50%; /* положение линии, меняется из JS */
-    position: relative;
-    width: 100%;
-    max-width: 1596px;
-    aspect-ratio: 1596 / 866;
-    margin: 0 auto;
-    border-radius: 18px;
-    overflow: hidden;
-    user-select: none;
-    touch-action: pan-y; /* вертикальный скролл на телефоне не ломается */
-    cursor: ew-resize;
-}
-
-/* Слой с картинкой и текстом */
-.compare__layer {
-    position: absolute;
-    inset: 0;
-}
-
-.compare__layer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-}
-
-/* Затемнение поверх картинки (Linear 40% из Figma).
-   Вставь сюда точный градиент из Inspect Styles */
-.compare__layer::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180.19deg, rgba(191, 2, 6, 0) 53.76%, rgba(153, 2, 5, 0.15) 73.39%, rgba(89, 1, 3, 0.4) 99.99%);
-    pointer-events: none;
-}
-
-/* Верхний слой (чеддер) обрезается по линии */
-.compare__layer--top {
-    z-index: 2;
-    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
-}
-
-/* Текст внутри слоя */
-.compare__text {
-    position: absolute;
-    z-index: 1;
-    top: 52px;
-    left: 54px;
-    max-width: 480px;
-    color: #fff;
-    transition: opacity .35s ease, transform .35s ease;
-}
-
-.compare__title {
-    margin: 0 0 40px;
-    font-weight: 700;
-    font-size: 52px;
-    line-height: 1.05581;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.compare__desc {
-    font-weight: 450;
-    font-size: 20px;
-    line-height: 1.09159;
-    color: #fff;
-    max-width: 365px;
-}
-
-/* Текст плавно уходит, когда линия его почти закрыла */
-.compare.is-left .compare__layer--top .compare__text,
-.compare.is-right .compare__layer--bottom .compare__text {
-    opacity: 0;
-    transform: translateX(-12px);
-}
-
-/* Линия */
-.compare__line {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    bottom: 0;
-    left: var(--pos);
-    width: 1px;
-    background: #fff;
-    transform: translateX(-50%);
-    pointer-events: none;
-}
-
-/* Кружок со стрелками */
-.compare__handle {
-    position: absolute;
-    z-index: 4;
-    top: 50%;
-    left: var(--pos);
-    width: 105px;
-    height: 105px;
-    padding: 0;
-    border: 1.19px solid #58060a;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.89);
-    transform: translate(-50%, -50%);
-    cursor: grab;
-    display: grid;
-    place-items: center;
-    transition: transform .2s ease;
-}
-
-.compare__handle:active,
-.compare.is-dragging .compare__handle {
-    cursor: grabbing;
-    transform: translate(-50%, -50%) scale(0.94);
-}
-
-.compare__handle:focus-visible {
-    outline: 3px solid #ffd191;
-    outline-offset: 4px;
-}
-
-/* Плавный переезд при клике (не при перетягивании) */
-.compare.is-animating .compare__layer--top {
-    transition: clip-path .45s cubic-bezier(.22, .8, .3, 1);
-}
-
-.compare.is-animating .compare__line,
-.compare.is-animating .compare__handle {
-    transition: left .45s cubic-bezier(.22, .8, .3, 1), transform .2s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .compare *, .compare.is-animating * {
-        transition: none !important;
-    }
-}
-
-/*taste*/
-.taste {
-    position: relative;
-    padding: 95px 0 116px 0;
-    z-index: 2;
-    background: radial-gradient(67.36% 130.46% at 67.8% 52.95%, #e3000b 0%, #bf0206 23%, #9a0501 51%, #8d0700 66%) /* Радиальный градиент в Figma повернут на -6.43deg; обычный CSS radial-gradient() не поддерживает поворот */;
-}
-
-.taste-img {
-    position: absolute;
-    top: -144px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.taste-img img {
-    width: 100%;
-}
-
-.taste-title {
-    z-index: 2;
-    position: relative;
-    margin: 0 auto;
-    max-width: 827px;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 1.18512;
-    text-align: center;
-    text-transform: uppercase;
-    color: #ffd191;
-}
-
-.taste-desc {
-    z-index: 2;
-    position: relative;
-    max-width: 731px;
-    margin: 35px auto 0;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 1.125;
-    text-align: center;
-    color: #ffd191;
-}
-
-.taste-list {
-    z-index: 2;
-    position: relative;
-    margin-top: 92px;
-    display: flex;
-    gap: 36px;
-    justify-content: center;
-}
-
-.taste-list li {
-    border-radius: 13px;
-    width: 507px;
-    background: #ffd191;
-    padding: 20px 22px 21px 22px;
-}
-
-.taste-list li img {
-    width: 100%;
-}
-
-.taste-list__title {
-    margin-top: 25px;
-    font-weight: 700;
-    font-size: 31px;
-    line-height: 1.04893;
-    color: #8d0701;
-}
-
-.taste-list__desc {
-    margin-top: 21px;
-    font-weight: 450;
-    font-size: 22px;
-    line-height: 1.24071;
-    color: #8d0701;
-}
-
-.taste-list__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 34px;
-    border-radius: 9px;
-    width: 463px;
-    height: 72px;
-    background: #8d0701;
-    font-weight: 500;
-    font-size: 28px;
-    color: #ffd191;
-}
-
-/*try*/
-.try {
-    background-image: url("assets/images/try-1.4.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 85px 0 95px 308px;
-}
-
-.try-title {
-    max-width: 827px;
-    font-weight: 700;
-    font-size: 88px;
-    line-height: 1.09985;
-    text-transform: uppercase;
-    color: #efefef;
-}
-
-.try-desc {
-    margin-top: 36px;
-    max-width: 490px;
-    font-weight: 500;
-    font-size: 35px;
-    line-height: 1.125;
-    color: #efefef;
-}
-
-.try-block {
-    margin-top: 96px;
-}
-
-.try-block p {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 1.2;
-    color: #efefef;
-}
-
-.try-list {
-    display: flex;
-    gap: 9px;
-}
-
-.try-list li {
-    margin-top: 17px;
-    border-radius: 8px;
-    width: 204px;
-    height: 76px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/*footer*/
-.footer {
-    padding: 56px 0 167px 0;
-    background: #efefef;
-}
 
 
