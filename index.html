@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>President</title>
 </head>
 <body>
@@ -66,8 +67,7 @@
         <ul class="quality-list">
             <li>
                 <img src="assets/images/quality-1.svg" alt="">
-                <p>Сделан на основе полутвердого сыра
-                    Чеддер</p>
+                <p>Сделан на основе полутвердого<br> сыра</p>
             </li>
             <li>
                 <img src="assets/images/quality-2.svg" alt="">
@@ -101,6 +101,8 @@
                 <div class="compare__text">
                     <h3 class="compare__title">Ароматный Чеддер</h3>
                     <p class="compare__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для
+                        хрустящих кукурузных начос и золотистого картофеля по-<br>деревенски</p>
+                    <p class="compare__desc-mob">Классический, глубокий вкус настоящего чеддера. Безупречная пара для
                         хрустящих кукурузных начос и золотистого картофеля <br>по-деревенски</p>
                 </div>
             </div>
@@ -109,9 +111,9 @@
             <div class="compare__layer compare__layer--top">
                 <img src="assets/images/compare-2.png" alt="Сыр My Cheese со вкусом чеддера">
                 <div class="compare__text">
-                    <h3 class="compare__title">Ароматный чеддер</h3>
-                    <p class="compare__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для
-                        хрустящих кукурузных начос и золотистого картофеля <br>по-деревенски</p>
+                    <h3 class="compare__title">пряная ПАПРИКА</h3>
+                    <p class="compare__desc">Уникальное сочетание классического сырного вкуса и  ноток паприки создают идеальный баланс вкуса, который подходит к любым блюда,  добавляя им глубину и пикантность!</p>
+                    <p class="compare__desc-mob">Уникальное сочетание классического сырного вкуса и  ноток паприки создают идеальный баланс вкуса, который подходит к любым блюда,  добавляя им глубину и пикантность!</p>
                 </div>
             </div>
 
@@ -138,21 +140,21 @@
         <ul class="taste-list">
             <li>
                 <img src="assets/images/taste-1.png" alt="">
-                <h3 class="taste-list__title">Хрустящие начос с гуакамоле и чеддером</h3>
-                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
-                <a class="taste-list__link" href="">Подробнее</a>
+                <h3 class="taste-list__title">Запеченные картофельные дольки</h3>
+                <p class="taste-list__desc">Пряные картофельные дольки с копченой паприкой, запеченные до румяной<br> корочки. Идеальная пара для насыщенного сырного соуса «Чеддер» President.</p>
+                <button type="button" class="taste-list__link" data-popup="popup-potato">Подробнее</button>
             </li>
             <li>
                 <img src="assets/images/taste-2.png" alt="">
-                <h3 class="taste-list__title">Запеченный картофель с беконом и паприкой</h3>
-                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
-                <a class="taste-list__link" href="">Подробнее</a>
+                <h3 class="taste-list__title">Домашние наггетсы</h3>
+                <p class="taste-list__desc">Сочное куриное филе в золотистой хрустящей панировке прямо из духовки. Обмакивайте в соус «Чеддер» President и наслаждайтесь 100% домашним вкусом.</p>
+                <button type="button" class="taste-list__link" data-popup="popup-nuggets">Подробнее</button>
             </li>
             <li>
                 <img src="assets/images/taste-3.png" alt="">
-                <h3 class="taste-list__title">Гриссини в пармской ветчине с сырным дипом</h3>
-                <p class="taste-list__desc">Классический, глубокий вкус настоящего чеддера. Безупречная пара для хрустящих кукурузных начос и золотистого картофеля по-деревенски</p>
-                <a class="taste-list__link" href="">Подробнее</a>
+                <h3 class="taste-list__title">Пицца-шарики</h3>
+                <p class="taste-list__desc">Горячие шарики с тягучей моцареллой и пепперони под пряным чесночным маслом. Созданы специально для макания <br>в сырные соусы President со вкусом «Паприка» и «Чеддер».</p>
+                <button type="button" class="taste-list__link" data-popup="popup-pizza">Подробнее</button>
             </li>
         </ul>
     </section>
@@ -177,9 +179,238 @@
 </main>
     <footer class="footer">
         <div class="container">
-            <img src="assets/images/footer-logo-1.svg" alt="">
+            <div class="footer-wrapper">
+                <img src="assets/images/footer-logo-1.svg" alt="">
+                <div class="footer-blocks">
+                    <div class="footer-block1">
+                        <p>Документы</p>
+                        <a class="footer-link" href="https://president-cheese.ru/privacy_policy/">Политика
+                            конфиденциальности</a>
+                        <a class="footer-link" href="https://president-cheese.ru/consent/">Согласие на
+                            обработку персональных данных</a>
+                    </div>
+                    <div class="footer-block2">
+                        <p>АО «Лакталис Восток»</p>
+                        <p>143581, Московская область,<br>
+                            г. Истра, д. Лешково, д. 180</p>
+                    </div>
+                    <div class="footer-block3">
+                        <p>Телефон бесплатной горячей линии в России:</p>
+                        <a href="tel:8 (800) 200-39-93">8 (800) 200-39-93</a>
+                        <a href="mailto:hotline@lactalis.ru">E-mail: hotline@lactalis.ru</a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-etc">© 2026 Président My Cheese. Все права защищены.</p>
         </div>
     </footer>
+<dialog class="recipe-popup" id="popup-potato" aria-labelledby="popup-potato-title">
+    <button type="button" class="recipe-popup__close" data-popup-close aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </button>
+    <div class="recipe-popup__inner">
+
+        <!-- Левая фиксированная колонка -->
+        <div class="recipe-popup__aside">
+            <h2 class="recipe-popup__title" id="popup-potato-title">Запеченные картофельные дольки</h2>
+
+            <ul class="recipe-popup__meta">
+                <li><img src="assets/images/portions.svg" alt="" width="32" height="32">4 порции</li>
+                <li><img src="assets/images/time.svg" alt="" width="25" height="25">40 мин</li>
+            </ul>
+
+            <p class="recipe-popup__label">Ингредиенты:</p>
+            <ul class="recipe-popup__ingredients">
+                <li><b>600 г</b> картофеля</li>
+                <li><b>1 ч. л.</b> копченой паприки</li>
+                <li><b>1 ч. л.</b> сушеного чеснока</li>
+                <li><b>1 ст. л.</b> растительного масла</li>
+                <li><b>Соль</b></li>
+                <li><b>Свежемолотый</b> черный перец</li>
+            </ul>
+
+            <p class="recipe-popup__label-last">Для подачи:</p>
+            <p class="recipe-popup__serve"><b>Плавленый соус со вкусом «Чеддер» President</b></p>
+        </div>
+
+        <!-- Правая скроллящаяся колонка -->
+        <div class="recipe-popup__content">
+            <div class="recipe-popup__media">
+                <video src="assets/video/potato.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+            </div>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/potato-step-1.png" alt="Ингредиенты для картофельных долек">
+            </div>
+
+            <ol class="recipe-popup__steps">
+                <li><b>Разогрейте духовку до 210°С.</b> Картофель тщательно вымойте, нарежьте дольками. Выложите в миску, полейте растительным маслом и перемешайте.</li>
+                <li><b>Смешайте</b> копченую паприку, сушеный чеснок, соль и перец. Посыпьте картофель, перемешайте. Выложите на противень, выстеленный пергаментом.</li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/potato-step-2.png" alt="Картофельные дольки в специях">
+            </div>
+
+            <ol class="recipe-popup__steps" start="3">
+                <li><b>Запекайте 20 мин.</b> Переверните и запекайте еще 15–20 мин. до мягкости.</li>
+                <li><b>Подавайте с плавленым соусом со вкусом «Чеддер» President.</b></li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/potato-step-3.png" alt="Готовые дольки с соусом President">
+            </div>
+        </div>
+
+    </div>
+</dialog>
+<dialog class="recipe-popup" id="popup-nuggets" aria-labelledby="popup-nuggets-title">
+    <button type="button" class="recipe-popup__close" data-popup-close aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </button>
+    <div class="recipe-popup__inner">
+
+        <!-- Левая фиксированная колонка -->
+        <div class="recipe-popup__aside">
+            <h2 class="recipe-popup__title" id="popup-nuggets-title">Домашние наггетсы</h2>
+
+            <ul class="recipe-popup__meta">
+                <li><img src="assets/images/portions.svg" alt="" width="32" height="32">4 порции</li>
+                <li><img src="assets/images/time.svg" alt="" width="25" height="25">40 мин</li>
+            </ul>
+
+            <p class="recipe-popup__label">Ингредиенты:</p>
+
+            <ul class="recipe-popup__ingredients">
+                <li><b>650 г</b> филе куриной грудки</li>
+                <li><b> 90 г</b> панировочных сухарей</li>
+                <li><b>1 ч. л.</b> сушеного лука</li>
+                <li><b>1 ч. л.</b> паприки</li>
+                <li><b>½ ч. л.</b> сушеного чеснока</li>
+                <li><b>2</b> яйца</li>
+                <li><b>2 ст. л.</b> молока</li>
+                <li><b>Растительное масло</b></li>
+                <li><b>Соль</b></li>
+                <li><b>Перец</b></li>
+            </ul>
+
+            <p class="recipe-popup__label-last">Для подачи:</p>
+            <p class="recipe-popup__serve"><b>Плавленый соус со вкусом «Чеддер» President</b></p>
+        </div>
+
+        <!-- Правая скроллящаяся колонка -->
+        <div class="recipe-popup__content">
+            <div class="recipe-popup__media">
+                <video src="assets/video/naggets.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+            </div>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/naggets-step-1.png" alt="Ингредиенты для картофельных долек">
+            </div>
+
+            <ol class="recipe-popup__steps">
+                <li><b>Разогрейте духовку до 200°С.</b> </li>
+                <li><b>Пересыпьте крошки в глубокую тарелку.</b> Добавьте паприку, сушеные лук<br> и чеснок, посолите и поперчите.</li>
+                <li><b>В другой глубокой тарелке взболтайте яйца с молоком.</b> </li>
+                <li><b>Нарежьте куриное филе кубиками 2½ см. </b> Обмакните куриные кубики <br>в яично-молочной смеси и запанируйте в пряной крошке.</li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/naggets-step-2.png" alt="Картофельные дольки в специях">
+            </div>
+
+            <ol class="recipe-popup__steps" start="5">
+                <li><b>Выложите заготовки на противень,</b> выстеленный пергаментом и смазанный маслом, на расстоянии друг от друга. Обильно сбрызните сверху маслом.</li>
+                <li><b>Запекайте 15-20 мин.</b>Подавайте с плавленым соусом со вкусом<br> «Чеддер» President.</li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/naggets-step-3.png" alt="Готовые дольки с соусом President">
+            </div>
+        </div>
+
+    </div>
+</dialog>
+<dialog class="recipe-popup" id="popup-pizza" aria-labelledby="popup-pizza-title">
+    <button type="button" class="recipe-popup__close" data-popup-close aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </button>
+    <div class="recipe-popup__inner">
+
+        <!-- Левая фиксированная колонка -->
+        <div class="recipe-popup__aside">
+            <h2 class="recipe-popup__title" id="popup-pizza-title">Пицца-<br>шарики</h2>
+
+            <ul class="recipe-popup__meta">
+                <li><img src="assets/images/portions.svg" alt="" width="32" height="32">6 порции</li>
+                <li><img src="assets/images/time.svg" alt="" width="25" height="25">40 мин</li>
+            </ul>
+
+            <p class="recipe-popup__label">Ингредиенты:</p>
+
+            <ul class="recipe-popup__ingredients">
+                <li><b>450 г</b> теста для пиццы</li>
+                <li><b> 250 г</b> томатного соуса с базиликом</li>
+                <li><b> 60 г</b> колбасок мини-пепперони</li>
+                <li><b> 220 г</b> моцареллы</li>
+                <li><b>2 ст. л.</b> тертого пармезана</li>
+                <li><b> 100 г</b> сливочного масла</li>
+                <li><b> 2 ч. л.</b> сушеного орегано</li>
+                <li><b> 2 ч. л.</b> сушеного чеснока</li>
+                <li><b>Соль</b></li>
+            </ul>
+
+            <p class="recipe-popup__label-last">Для подачи:</p>
+            <p class="recipe-popup__serve"><b>
+                Плавленый соус со вкусом «Паприка» и «Чеддер» President</b></p>
+        </div>
+
+        <!-- Правая скроллящаяся колонка -->
+        <div class="recipe-popup__content">
+            <div class="recipe-popup__media">
+                <video src="assets/video/pizza.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+            </div>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/pizza-step-1.png" alt="Ингредиенты для картофельных долек">
+            </div>
+
+            <ol class="recipe-popup__steps">
+                <li><b>Разогрейте духовку до 200°С.</b> Колбаски нарежьте тонкими кружками. Моцареллу нарежьте маленькими кубиками.</li>
+                <li><b>Разделите тесто на 20-25 частей.</b> Раскатайте каждую в кружок. Положите в центр немного томатного соуса, кружочки пепперони и кубики моцареллы. Тщательно защипните тесто над начинкой. Скатайте шарик. Положите швом вниз на противень, выстеленный пергаментом.</li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/pizza-step-2.png" alt="Картофельные дольки в специях">
+            </div>
+
+            <ol class="recipe-popup__steps" start="3">
+                <li><b>Растопите сливочное масло.</b> Добавьте щепотку соли, сушеные орегано и чеснок. Перемешайте. Смажьте шарики с помощью кулинарной кисти. Запекайте 15-20 мин. Если пицца-шарики начнут темнеть, накройте<br> фольгой. За 5 минут до готовности посыпьте тертым пармезаном.</li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/pizza-step-3.png" alt="Готовые дольки с соусом President">
+            </div>
+
+            <ol class="recipe-popup__steps" start="4">
+                <li><b>Горячие шарики снова смажьте пряным маслом и подавайте с плавлеными соусами со вкусом «Паприка» и «Чеддер» President.</b> </li>
+            </ol>
+
+            <div class="recipe-popup__media">
+                <img src="assets/images/pizza-step-4.png" alt="Готовые дольки с соусом President">
+            </div>
+        </div>
+
+    </div>
+</dialog>
+
 <script src="slider.js"></script>
+<script src="popap.js"></script>
 </body>
 </html>
