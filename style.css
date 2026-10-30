@@ -697,7 +697,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 372px 7px 442px;
+        padding: 11px 372px 41px 442px;
         width: 100%;
         background-image: url("assets/images/header-back-4.svg");
         z-index: 3;
@@ -1285,7 +1285,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 276px 22px 346px;
+        padding: 14px 276px 14px 346px;
         width: 100%;
         background-image: url("assets/images/header-back-3.svg");
         z-index: 3;
@@ -1876,7 +1876,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 179px 20px 229px;
+        padding: 14px 179px 18px 229px;
         width: 100%;
         background-image: url("assets/images/header-back-2.svg");
         z-index: 3;
@@ -2449,7 +2449,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 131px 22px 202px;
+        padding: 10px 131px 10px 202px;
         width: 100%;
         background-image: url("assets/images/header-back-1.svg");
         z-index: 3;
