@@ -65,6 +65,12 @@ body {
 }
 
 /*header*/
+
+.header-mob,
+.mob-menu {
+    display: none;
+}
+
 .header-img {
     position: relative;
     width: 100%;
@@ -198,6 +204,14 @@ body {
     margin-top: 91px;
     display: flex;
     gap: 35px;
+}
+
+.quality-list-mob {
+    display: none;
+}
+
+.quality-list-desc {
+    display: block;
 }
 
 .quality-list li {
@@ -435,6 +449,14 @@ body {
     color: #ffd191;
 }
 
+.taste-desc-mob {
+    display: none;
+}
+
+.taste-desc-desc {
+    display: block;
+}
+
 .taste-list {
     z-index: 2;
     position: relative;
@@ -497,6 +519,10 @@ body {
     padding: 85px 0 95px 308px;
 }
 
+.try-img {
+    display: none;
+}
+
 .try-title {
     max-width: 827px;
     font-weight: 700;
@@ -546,6 +572,10 @@ body {
 .footer {
     padding: 80px 0 63px 0;
     background: #cf0108;
+}
+
+.footer-nav {
+    display: none;
 }
 
 .footer-wrapper {
@@ -1128,9 +1158,10 @@ body {
         background: #cf0108;
     }
 
-    .footer img {
+    .footer-logo {
         width: 329px;
     }
+
 
     .footer-wrapper {
         display: flex;
@@ -1719,7 +1750,7 @@ body {
         background: #cf0108;
     }
 
-    .footer img {
+    .footer-logo {
         width: 329px;
     }
 
@@ -2292,7 +2323,7 @@ body {
         background: #cf0108;
     }
 
-    .footer img {
+    .footer-logo {
         width: 329px;
     }
 
@@ -2872,7 +2903,7 @@ body {
         background: #cf0108;
     }
 
-    .footer img {
+    .footer-logo {
         width: 329px;
     }
 
@@ -2974,11 +3005,6 @@ body {
     }
 
 }
-
-
-
-
-
 
 
 .recipe-popup {
@@ -3136,10 +3162,12 @@ html:has(.recipe-popup[open]) {
     opacity: 0;
     transition: opacity 0.25s, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
 }
+
 .recipe-popup[open],
 .recipe-popup[open]::backdrop {
     opacity: 1;
 }
+
 @starting-style {
     .recipe-popup[open],
     .recipe-popup[open]::backdrop {
@@ -3174,7 +3202,1839 @@ html:has(.recipe-popup[open]) {
 .recipe-popup__close:focus {
     outline: none;
 }
+
 .recipe-popup__close:focus-visible {
     outline: 3px solid var(--popup-red);
     outline-offset: 3px;
 }
+
+@media (max-width: 1024px) {
+    /* Десктопную плашку прячем */
+    .header-block {
+        display: none;
+    }
+
+    .header-mob {
+        /*position: relative;*/
+        display: flex;
+        align-items: center;
+        height: 70px;
+        background: #cf0108;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .header-mob__burger {
+        display: flex;
+        padding: 26px 32px;
+        /*margin-left: -32px; !* увеличенная зона нажатия, иконка остаётся на месте *!*/
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .header-mob__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .header-mob__logo img {
+        display: block;
+        width: 90px;
+    }
+
+    /* Меню */
+    .mob-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 34px 32px 48px;
+        background: #cf0108;
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .mob-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mob-menu__close {
+        position: absolute;
+        top: 34px;
+        left: 32px;
+        display: flex;
+        padding: 8px;
+        margin: -8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .mob-menu__logo {
+        width: 189px;
+    }
+
+    .mob-menu__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+        margin: 76px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mob-menu__list a {
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 1.17647;
+        text-align: center;
+        color: #efefef;
+        transition: opacity 0.2s;
+    }
+
+    .mob-menu__list a:hover {
+        opacity: 0.8;
+    }
+
+    /* Пункты меню въезжают снизу */
+    .mob-menu__list li {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li {
+        opacity: 1;
+        transform: none;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(2) {
+        transition-delay: 0.05s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(3) {
+        transition-delay: 0.1s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(4) {
+        transition-delay: 0.15s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(5) {
+        transition-delay: 0.2s;
+    }
+
+    html.is-menu-open {
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 704px;
+        margin: 0 auto;
+    }
+
+    /*addition*/
+    .addition {
+        background: #ffc13a;
+        padding: 24px 0 40px;
+
+    }
+
+    .addition-title {
+        max-width: 550px;
+        margin: 0 auto;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 1.15789;
+        text-align: center;
+        text-transform: uppercase;
+        color: #8d0700;
+    }
+
+    .addition-list {
+        margin-top: 32px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .addition-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 224px;
+    }
+
+    .addition-list li p {
+        max-width: 287px;
+        margin-top: 12px;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 1.35294;
+        text-align: center;
+        color: #8d0700;
+    }
+
+    .addition-list li img {
+        width: 100%;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .desc {
+        display: block;
+    }
+
+    .addition-list li:nth-child(3) p {
+        max-width: 180px;
+    }
+
+    /*quality*/
+    .quality {
+        background: #8d0700;
+        padding: 140px 32px 36px 32px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .quality-img {
+        position: absolute;
+        top: 36px;
+        right: -14px;
+        width: 422px;
+        height: 100%;
+    }
+
+    .quality-img img {
+        width: 100%;
+    }
+
+    .quality-title {
+        padding-left: 0;
+        max-width: 304px;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 1.17647;
+        color: #efefef;
+        text-transform: initial;
+    }
+
+    .quality-list {
+        margin-top: 136px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .quality-list-mob {
+        display: block;
+    }
+
+    .quality-list-desc {
+        display: none;
+    }
+
+    .quality-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quality-list li:nth-child(2) p {
+        max-width: 180px;
+    }
+
+    .quality-list li:nth-child(3) p {
+        max-width: 220px;
+    }
+
+
+    .quality-list p {
+        margin-top: 16px;
+        max-width: 218px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.4375;
+        text-align: center;
+        color: #efefef;
+    }
+
+    /*compare*/
+    .main {
+        background: #ffc13a;
+        padding: 36px 32px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .main-img1 {
+        display: none;
+    }
+
+    .main-img2 {
+        display: none;
+    }
+
+    .main-img2 img {
+        width: 100%;
+    }
+
+    .compare {
+        --img-ratio: 704 / 394;
+        --img-h: calc(100cqw * 394 / 704); /* высота картинки */
+        aspect-ratio: auto;
+        container-type: inline-size; /* нужно, чтобы поставить кружок по центру картинки */
+        border-radius: 12px;
+        background: #8d0700;
+    }
+
+    /* Линия только по высоте картинки */
+    .compare__line {
+        bottom: auto;
+        height: var(--img-h);
+    }
+
+    /* Кружок по центру картинки */
+    .compare__handle {
+        top: calc(var(--img-h) / 2);
+        width: 96px;
+        height: 96px;
+    }
+
+    .compare__layer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Нижний слой задаёт высоту блока, верхний лежит поверх */
+    .compare__layer--bottom {
+        position: relative;
+    }
+
+    .compare__layer img {
+        flex-shrink: 0;
+        height: auto;
+        aspect-ratio: var(--img-ratio);
+    }
+
+    /* Градиент нужен был только под текстом на фото */
+    .compare__layer::after {
+        display: none;
+    }
+
+    /* Режем только картинку верхнего слоя, а не весь слой */
+    .compare__layer--top {
+        clip-path: none;
+    }
+
+    .compare__layer--top img {
+        clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+
+    .compare.is-animating .compare__layer--top img {
+        transition: clip-path 0.45s cubic-bezier(.22, .8, .3, 1);
+    }
+
+    /* Текстовая плашка */
+    .compare__text {
+        position: static;
+        flex: 1;
+        max-width: none;
+        padding: 24px;
+        background: #8d0700;
+        transform: none !important;
+    }
+
+    .compare__layer--bottom .compare__text {
+        min-height: 144px;
+    }
+
+    /* Текст верхнего слоя перекрывает нижний, когда активен */
+    .compare__layer--top .compare__text {
+        opacity: 0;
+    }
+
+    .compare.is-top-active .compare__layer--top .compare__text {
+        opacity: 1;
+    }
+
+    .compare__title {
+        margin: 0 0 12px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.2;
+        color: #efefef;
+        text-transform: none;
+    }
+
+    .compare__desc,
+    .compare__desc-mob {
+        max-width: 550px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #efefef;
+    }
+
+    .compare__desc br,
+    .compare__desc-mob br {
+        display: none;
+    }
+
+    /* Линия идёт через всю высоту, кружок стоит по центру картинки */
+    .compare__handle {
+        top: calc(100cqw * 394 / 704 / 2);
+        width: 96px;
+        height: 96px;
+    }
+
+    .compare__handle img {
+        width: 55%;
+    }
+
+
+    /*taste*/
+    .taste {
+        position: relative;
+        padding: 40px 0 40px 0;
+        z-index: 2;
+        background: #8d0700;
+    }
+
+    .taste-img {
+        display: none;
+    }
+
+    .taste-img img {
+        width: 100%;
+    }
+
+    .taste-title {
+        z-index: 2;
+        position: relative;
+        margin: 0 auto;
+        max-width: 340px;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 1.15789;
+        text-align: center;
+        color: #ffd191;
+        text-transform: initial;
+    }
+
+    .taste-desc {
+        z-index: 2;
+        position: relative;
+        max-width: 704px;
+        margin: 24px auto 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+        color: #ffd191;
+    }
+
+    .taste-desc-mob {
+        display: block;
+    }
+
+    .taste-desc-desc {
+        display: none;
+    }
+
+    .taste-list {
+        z-index: 2;
+        position: relative;
+        margin-top: 24px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .taste-list li {
+        border-radius: 12px;
+        width: 224px;
+        background: #ffd191;
+        padding: 14px;
+        height: 464px;
+    }
+
+    .taste-list li img {
+        width: 100%;
+    }
+
+    .taste-list__title {
+        margin-top: 13px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 1.35294;
+        color: #8d0700;
+    }
+
+    .taste-list__desc {
+        margin-top: 13px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #8d0700;
+    }
+
+    .taste-list__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        border-radius: 6px;
+        width: 196px;
+        height: 48px;
+        background: #8d0701;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 1.33333;
+        color: #efefef;
+    }
+
+    /*try*/
+    .try {
+        background-image: none;
+        background: #8d0700;
+        padding: 36px 32px;
+    }
+
+    .try-img {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .try-title {
+        max-width: 827px;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 1.15789;
+        color: #efefef;
+    }
+
+    .try-desc {
+        margin-top: 20px;
+        max-width: 650px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 1.47059;
+        color: #efefef;
+    }
+
+    .try-block {
+        margin-top: 20px;
+    }
+
+    .try-block p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #efefef;
+    }
+
+    .try-list {
+        display: flex;
+        gap: 8px;
+    }
+
+    .try-list li {
+        margin-top: 20px;
+        border-radius: 6px;
+        width: 229px;
+        height: 56px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*footer*/
+    .footer {
+        padding: 32px 0;
+    }
+
+    .footer-logo {
+        width: 112px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-nav {
+        display: block;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-nav a {
+        font-weight: 600;
+        font-size: 16px;
+        color: #ffe7e6;
+    }
+
+    .footer-blocks {
+        gap: 24px;
+    }
+
+    .footer-block1,
+    .footer-block2,
+    .footer-block3 {
+        flex: 1 1 0;
+        max-width: none;
+    }
+
+    /* Блок с телефоном первым, как в макете */
+    .footer-block3 {
+        order: -1;
+    }
+
+    .footer-block1 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 218px;
+    }
+
+    .footer-block1 p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffe7e6;
+    }
+
+    .footer-block2 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 218px;
+    }
+
+    .footer-block2 p:first-of-type {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffe7e6;
+    }
+
+    .footer-block2 p:last-of-type {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.57143;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 218px;
+    }
+
+    .footer-block3 p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 a:first-of-type {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.4;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 a:last-of-type {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.46667;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+
+    .footer-link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+    .footer-etc {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #ffe7e6;
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #ffe7e6;
+    }
+
+
+    /*popap*/
+
+    .recipe-popup {
+
+        /* Центрирование по горизонтали и вертикали на любом экране */
+        position: fixed;
+        inset: 0;
+        margin: auto;
+
+        width: min(691px, calc(100% - 20px));
+        height: fit-content;
+        max-width: none;
+        max-height: calc(100dvh - 20px);
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        background: #ffd191;
+        color: #a40402;
+        overflow: hidden;
+    }
+
+    .recipe-popup::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Блокируем скролл страницы, пока попап открыт */
+    html:has(.recipe-popup[open]) {
+        overflow: hidden;
+    }
+
+    /* Скроллится этот контейнер, а не страница */
+    .recipe-popup__inner {
+        display: grid;
+        grid-template-columns: 1fr minmax(0, 358px);
+        gap: 30px;
+        max-height: calc(100dvh - 20px);
+        padding: 24px 28px 26px 25px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    /* Фиксированный блок */
+    .recipe-popup__aside {
+        position: sticky;
+        top: 0;
+        align-self: start;
+    }
+
+    .recipe-popup__title {
+        margin: 0 0 40px;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 1.16161;
+        text-transform: uppercase;
+        color: #a40402;
+    }
+
+    .recipe-popup__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 0 0 10px;
+        padding: 0;
+        list-style: none;
+        font-weight: 450;
+        font-size: 13px;
+        line-height: 1.73435;
+        color: #a40402;
+    }
+
+    .recipe-popup__meta li {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .recipe-popup__meta li:first-child img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .recipe-popup__meta li:nth-child(2) img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .recipe-popup__label {
+        margin: 0 0 20px;
+        font-weight: 450;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__label-last {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__ingredients {
+        margin: 0 0 25px;
+        padding: 0;
+        list-style: none;
+        font-weight: 450;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__ingredients b {
+        font-weight: 700;
+    }
+
+    .recipe-popup__serve {
+        margin: 0;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+        max-width: 180px;
+    }
+
+    .recipe-popup__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .recipe-popup__media {
+        aspect-ratio: 358 / 223;
+        border-radius: 17px;
+        overflow: hidden;
+        background: #d9d9d9;
+    }
+
+    .recipe-popup__media img,
+    .recipe-popup__media video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .recipe-popup__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+        padding-left: 10px;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+        font-weight: 400;
+    }
+
+    .recipe-popup__steps b,
+    .recipe-popup__steps li::marker {
+        color: #a40402;
+        font-weight: 700;
+    }
+
+    /* Анимация появления (в старых браузерах просто откроется без неё) */
+    .recipe-popup,
+    .recipe-popup::backdrop {
+        opacity: 0;
+        transition: opacity 0.25s, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+    }
+
+    .recipe-popup[open],
+    .recipe-popup[open]::backdrop {
+        opacity: 1;
+    }
+
+    @starting-style {
+        .recipe-popup[open],
+        .recipe-popup[open]::backdrop {
+            opacity: 0;
+        }
+    }
+
+    .recipe-popup__close {
+        position: absolute;
+        top: 8px;
+        right: 8px; /* чтобы не наезжать на скроллбар */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: inherit;
+        color: #a40402;;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .recipe-popup__close:hover {
+        transform: rotate(90deg);
+    }
+
+    /* Обводка фокуса только при навигации с клавиатуры */
+    .recipe-popup__close:focus {
+        outline: none;
+    }
+
+    .recipe-popup__close:focus-visible {
+        outline: 3px solid var(--popup-red);
+        outline-offset: 3px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Десктопную плашку прячем */
+    .header-block {
+        display: none;
+    }
+
+    .header-mob {
+        /*position: relative;*/
+        display: flex;
+        align-items: center;
+        height: 70px;
+        background: #cf0108;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .header-mob__burger {
+        display: flex;
+        padding: 26px 20px;
+        /*margin-left: -32px; !* увеличенная зона нажатия, иконка остаётся на месте *!*/
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .header-mob__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .header-mob__logo img {
+        display: block;
+        width: 90px;
+    }
+
+    /* Меню */
+    .mob-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 22px 20px 28px;
+        background: #cf0108;
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .mob-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mob-menu__close {
+        position: absolute;
+        top: 22px;
+        left: 20px;
+        display: flex;
+        padding: 8px;
+        margin: -8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .mob-menu__logo {
+        width: 120px;
+    }
+
+    .mob-menu__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 34px;
+        margin: 48px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mob-menu__list a {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.17647;
+        text-align: center;
+        color: #efefef;
+        transition: opacity 0.2s;
+    }
+
+    .mob-menu__list a:hover {
+        opacity: 0.8;
+    }
+
+    /* Пункты меню въезжают снизу */
+    .mob-menu__list li {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li {
+        opacity: 1;
+        transform: none;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(2) {
+        transition-delay: 0.05s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(3) {
+        transition-delay: 0.1s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(4) {
+        transition-delay: 0.15s;
+    }
+
+    .mob-menu.is-open .mob-menu__list li:nth-child(5) {
+        transition-delay: 0.2s;
+    }
+
+    html.is-menu-open {
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 448px;
+        margin: 0 auto;
+    }
+
+    /*addition*/
+    .addition {
+        background: #ffc13a;
+        padding: 24px 0 40px;
+
+    }
+
+    .addition-title {
+        max-width: 438px;
+        margin: 0 auto;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        color: #8d0700;
+    }
+
+    .addition-list {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addition-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 448px;
+    }
+
+    .addition-list li p {
+        max-width: 448px;
+        margin-top: 12px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        text-align: center;
+        color: #8d0700;
+    }
+
+    .addition-list li img {
+        width: 100%;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .desc {
+        display: block;
+    }
+
+    .addition-list li:nth-child(3) p {
+        max-width: 212px;
+    }
+
+    /*quality*/
+    .quality {
+        background: #8d0700;
+        padding: 36px 20px 44px 20px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .quality-img {
+        position: absolute;
+        top: 132px;
+        right: 0;
+        /*transform: translateY(50%);*/
+        width: auto;
+        height: 399px;
+    }
+
+    .quality-img img {
+        width: 100%;
+    }
+
+    .quality-title {
+        padding-left: 0;
+        margin: 0 auto;
+        max-width: 304px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.2;
+        text-align: center;
+        color: #efefef;
+        text-transform: initial;
+    }
+
+    .quality-list {
+        margin-top: 455px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .quality-list-mob {
+        display: block;
+    }
+
+    .quality-list-desc {
+        display: none;
+    }
+
+    .quality-list li {
+        display: flex;
+        max-width: 448px;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .quality-list li:nth-child(2) p {
+        max-width: none;
+    }
+
+    .quality-list li:nth-child(3) p {
+        max-width: none;
+    }
+
+
+    .quality-list p {
+        margin-top: 0;
+        max-width: none;
+        font-weight: 500;
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.4375;
+        color: #efefef;
+    }
+
+    /*compare*/
+    .main {
+        background: #ffc13a;
+        padding: 36px 20px;
+        position: relative;
+        overflow-x: clip;
+    }
+
+    .main-img1 {
+        display: none;
+    }
+
+    .main-img2 {
+        display: none;
+    }
+
+    .main-img2 img {
+        width: 100%;
+    }
+
+    .compare {
+        --img-ratio: 141px / 250;
+        --img-h: calc(100cqw * 141 / 258); /* высота картинки */
+        aspect-ratio: auto;
+        container-type: inline-size; /* нужно, чтобы поставить кружок по центру картинки */
+        border-radius: 18px;
+        background: #8d0700;
+    }
+
+    /* Линия только по высоте картинки */
+    .compare__line {
+        bottom: auto;
+        height: var(--img-h);
+    }
+
+    /* Кружок по центру картинки */
+    .compare__handle {
+        top: calc(var(--img-h) / 2);
+        width: 61px;
+        height: 61px;
+    }
+
+    .compare__layer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Нижний слой задаёт высоту блока, верхний лежит поверх */
+    .compare__layer--bottom {
+        position: relative;
+    }
+
+    .compare__layer img {
+        flex-shrink: 0;
+        height: auto;
+        aspect-ratio: var(--img-ratio);
+    }
+
+    /* Градиент нужен был только под текстом на фото */
+    .compare__layer::after {
+        display: none;
+    }
+
+    /* Режем только картинку верхнего слоя, а не весь слой */
+    .compare__layer--top {
+        clip-path: none;
+    }
+
+    .compare__layer--top img {
+        clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+    }
+
+    .compare.is-animating .compare__layer--top img {
+        transition: clip-path 0.45s cubic-bezier(.22, .8, .3, 1);
+    }
+
+    /* Текстовая плашка */
+    .compare__text {
+        position: static;
+        flex: 1;
+        max-width: none;
+        padding: 24px;
+        background: #8d0700;
+        transform: none !important;
+    }
+
+    .compare__layer--bottom .compare__text {
+        min-height: 144px;
+    }
+
+    /* Текст верхнего слоя перекрывает нижний, когда активен */
+    .compare__layer--top .compare__text {
+        opacity: 0;
+    }
+
+    .compare.is-top-active .compare__layer--top .compare__text {
+        opacity: 1;
+    }
+
+    .compare__title {
+        margin: 0 0 12px;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.23077;
+        color: #efefef;
+        text-transform: none;
+    }
+
+    .compare__desc,
+    .compare__desc-mob {
+        max-width: 550px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #efefef;
+    }
+
+    .compare__desc br,
+    .compare__desc-mob br {
+        display: none;
+    }
+
+    /* Линия идёт через всю высоту, кружок стоит по центру картинки */
+    .compare__handle {
+        top: calc(100cqw * 141 / 250 / 2);
+        width: 61px;
+        height: 61px;
+    }
+
+    .compare__handle img {
+        width: 55%;
+    }
+
+
+    /*taste*/
+    .taste {
+        position: relative;
+        padding: 40px 0 40px 0;
+        z-index: 2;
+        background: #8d0700;
+    }
+
+    .taste-img {
+        display: none;
+    }
+
+    .taste-img img {
+        width: 100%;
+    }
+
+    .taste-title {
+        z-index: 2;
+        position: relative;
+        margin: 0 auto;
+        max-width: 289px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        text-align: center;
+        color: #ffd191;
+    }
+
+    .taste-desc {
+        z-index: 2;
+        position: relative;
+        max-width: 704px;
+        margin: 24px auto 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+        color: #ffd191;
+        padding: 0 20px;
+    }
+
+    .taste-desc-mob {
+        display: block;
+
+    }
+
+    .taste-desc-desc {
+        display: none;
+    }
+
+    .taste-list {
+        z-index: 2;
+        position: relative;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .taste-list li {
+        border-radius: 12px;
+        width: 100%;
+        max-width: 448px;
+        background: #ffd191;
+        padding: 14px;
+        height: 464px;
+    }
+
+    .taste-list li img {
+        width: 100%;
+    }
+
+    .taste-list__title {
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #8d0700;
+    }
+
+    .taste-list__desc {
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.46667;
+        color: #8d0700;
+    }
+
+    .taste-list__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        border-radius: 6px;
+        width: 100%;
+        height: 48px;
+        background: #8d0701;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 1.33333;
+        color: #efefef;
+    }
+
+    /*try*/
+    .try {
+        background-image: none;
+        background: #8d0700;
+        padding: 36px 20px;
+    }
+
+    .try-img {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .try-title {
+        max-width: 827px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        color: #efefef;
+    }
+
+    .try-desc {
+        margin-top: 20px;
+        max-width: 650px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 1.47059;
+        color: #efefef;
+    }
+
+    .try-block {
+        margin-top: 20px;
+    }
+
+    .try-block p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #efefef;
+    }
+
+    .try-list {
+        display: flex;
+        gap: 8px;
+    }
+
+    .try-list li {
+        margin-top: 20px;
+        border-radius: 6px;
+        width: 144px;
+        height: 56px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .try-list li img {
+        width: 70%;
+    }
+
+    /*footer*/
+    .footer {
+        padding: 32px 0;
+    }
+
+    .footer-logo {
+        width: 112px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-nav {
+        display: block;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-nav a {
+        font-weight: 600;
+        font-size: 16px;
+        color: #ffe7e6;
+    }
+
+    .footer-blocks {
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .footer-block1,
+    .footer-block2,
+    .footer-block3 {
+        flex: 1 1 0;
+        max-width: none;
+    }
+
+    /* Блок с телефоном первым, как в макете */
+    .footer-block3 {
+        order: -1;
+    }
+
+    .footer-block1 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: none;
+    }
+
+    .footer-block1 p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffe7e6;
+    }
+
+    .footer-block2 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: none;
+    }
+
+    .footer-block2 p:first-of-type {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffe7e6;
+    }
+
+    .footer-block2 p:last-of-type {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.57143;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: none;
+    }
+
+    .footer-block3 p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 a:first-of-type {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.33333;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+    .footer-block3 a:last-of-type {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.46667;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+    .footer-link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #ffe7e6;
+    }
+
+    .footer-etc {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #ffe7e6;
+        font-size: 14px;
+        line-height: 1.42857;
+        color: #ffe7e6;
+    }
+
+
+    /*popap*/
+
+    .recipe-popup {
+
+        /* Центрирование по горизонтали и вертикали на любом экране */
+        position: fixed;
+        inset: 0;
+        margin: auto;
+
+        width: min(453px, calc(100% - 10px));
+        height: fit-content;
+        max-width: none;
+        max-height: calc(100dvh - 10px);
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        background: #ffd191;
+        color: #a40402;
+        overflow: hidden;
+    }
+
+    .recipe-popup::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Блокируем скролл страницы, пока попап открыт */
+    html:has(.recipe-popup[open]) {
+        overflow: hidden;
+    }
+
+    /* Скроллится этот контейнер, а не страница */
+    .recipe-popup__inner {
+       display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-height: calc(100dvh - 10px);
+        padding: 24px 32px 34px 25px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    /* Фиксированный блок */
+    .recipe-popup__aside {
+        position: relative;
+        top: 0;
+        align-self: start;
+    }
+
+    .recipe-popup__title {
+        margin: 0 0 20px;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 1.16161;
+        text-transform: uppercase;
+        color: #a40402;
+    }
+
+    .recipe-popup__meta {
+        display: flex;
+        flex-direction: row;
+        gap: 34px;
+        margin: 0 0 30px;
+        padding: 0;
+        list-style: none;
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 1.73435;
+        color: #a40402;
+    }
+
+    .recipe-popup__meta li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .recipe-popup__meta li:first-child img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .recipe-popup__meta li:nth-child(2) img {
+        width: 19px;
+        height: 19px;
+    }
+
+    .recipe-popup__label {
+        margin: 0 0 20px;
+        font-weight: 450;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__label-last {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__ingredients {
+        margin: 0 0 15px;
+        padding: 0;
+        list-style: none;
+        font-weight: 450;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+    }
+
+    .recipe-popup__ingredients b {
+        font-weight: 700;
+    }
+
+    .recipe-popup__serve {
+        margin: 0;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+        max-width: 180px;
+    }
+
+    .recipe-popup__content {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .recipe-popup__media {
+        aspect-ratio: 395 / 224;
+        border-radius: 17px;
+        overflow: hidden;
+        background: #d9d9d9;
+    }
+
+    .recipe-popup__media img,
+    .recipe-popup__media video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .recipe-popup__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+        padding-left: 10px;
+        font-size: 11px;
+        line-height: 1.24071;
+        color: #a40402;
+        font-weight: 400;
+    }
+
+    .recipe-popup__steps b,
+    .recipe-popup__steps li::marker {
+        color: #a40402;
+        font-weight: 700;
+    }
+
+    /* Анимация появления (в старых браузерах просто откроется без неё) */
+    .recipe-popup,
+    .recipe-popup::backdrop {
+        opacity: 0;
+        transition: opacity 0.25s, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+    }
+
+    .recipe-popup[open],
+    .recipe-popup[open]::backdrop {
+        opacity: 1;
+    }
+
+    @starting-style {
+        .recipe-popup[open],
+        .recipe-popup[open]::backdrop {
+            opacity: 0;
+        }
+    }
+
+    .recipe-popup__close {
+        position: absolute;
+        top: 8px;
+        right: 8px; /* чтобы не наезжать на скроллбар */
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: inherit;
+        color: #a40402;;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .recipe-popup__close:hover {
+        transform: rotate(90deg);
+    }
+
+    /* Обводка фокуса только при навигации с клавиатуры */
+    .recipe-popup__close:focus {
+        outline: none;
+    }
+
+    .recipe-popup__close:focus-visible {
+        outline: 3px solid var(--popup-red);
+        outline-offset: 3px;
+    }
+}
+

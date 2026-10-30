@@ -9,8 +9,24 @@
 </head>
 <body>
 <main>
+    <div class="header-mob">
+        <button class="header-mob__burger" type="button" aria-label="Открыть меню"
+                aria-expanded="false" aria-controls="mob-menu" data-menu-open>
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" aria-hidden="true">
+                <path d="M1 1H21M1 10H21M1 19H21" stroke="#F7E4E4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <a class="header-mob__logo" href="#">
+            <img src="assets/images/header-logo-1.svg" alt="President">
+        </a>
+    </div>
     <section class="header">
+        <!-- Мобильная/планшетная шапка -->
+
         <picture class="header-img">
+            <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+            <source media="(max-width: 767px)" srcset="assets/images/header-7.png">
+            <source media="(max-width: 1023px)" srcset="assets/images/header-6.png">
             <source media="(min-width: 2300px)" srcset="assets/images/header-5.png">
             <source media="(min-width: 1920px)" srcset="assets/images/header-4.png">
             <source media="(min-width: 1728px)" srcset="assets/images/header-3.png">
@@ -18,28 +34,57 @@
             <img src="assets/images/header-1.png" alt="">
         </picture>
         <div class="header-block">
-                <ul class="header-list">
-                    <li><a href="#addition">О продукте</a></li>
-                    <li><a href="#quality">Преимущества</a></li>
-                </ul>
-                <img src="assets/images/header-logo-1.svg" alt="">
-                <ul class="header-list">
-                    <li><a href="#main">Вкусы</a></li>
-                    <li><a href="#taste">Рецепты</a></li>
-                    <li><a href="#try">Где купить</a></li>
-                </ul>
+            <ul class="header-list">
+                <li><a href="#addition">О продукте</a></li>
+                <li><a href="#quality">Преимущества</a></li>
+            </ul>
+            <img src="assets/images/header-logo-1.svg" alt="">
+            <ul class="header-list">
+                <li><a href="#main">Вкусы</a></li>
+                <li><a href="#taste">Рецепты</a></li>
+                <li><a href="#try">Где купить</a></li>
+            </ul>
         </div>
     </section>
+    <!-- Бургер-меню (в конец body, рядом с попапами) -->
+    <div class="mob-menu" id="mob-menu" aria-hidden="true">
+        <button class="mob-menu__close" type="button" aria-label="Закрыть меню" data-menu-close>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path d="M1 1L21 21M21 1L1 21" stroke="#F7E4E4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <img class="mob-menu__logo" src="assets/images/header-logo-1.svg" alt="President">
+
+        <nav>
+            <ul class="mob-menu__list">
+                <li><a href="#addition">О продукте</a></li>
+                <li><a href="#main">Вкусы</a></li>
+                <li><a href="#quality">Преимущества</a></li>
+                <li><a href="#taste">Рецепты</a></li>
+                <li><a href="#try">Где купить</a></li>
+            </ul>
+        </nav>
+    </div>
     <section id="addition" class="addition">
         <h2 class="addition-title">Идеальное дополнение
             к любой закуске</h2>
         <ul class="addition-list">
             <li>
-                <img src="assets/images/addition-1.png" alt="">
+                <img src="" alt="">
+                <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/addition-1.1.png">
+                    <img src="assets/images/addition-1.png" alt="">
+                </picture>
                 <p>Просмотр любимого сериала</p>
             </li>
             <li>
-                <img src="assets/images/addition-2.png" alt="">
+                <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/addition-2.1.png">
+                    <img src="assets/images/addition-2.png" alt="">
+                </picture>
                 <p class="tablet">Быстрый перекус
                     на пикнике или<br>
                     в офисе</p>
@@ -49,7 +94,11 @@
                     в офисе</p>
             </li>
             <li>
-                <img src="assets/images/addition-3.png" alt="">
+                <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/addition-3.1.png">
+                    <img src="assets/images/addition-3.png" alt="">
+                </picture>
                 <p>Встречи с родными и друзьями</p>
             </li>
         </ul>
@@ -57,25 +106,32 @@
     <section id="quality" class="quality">
 
         <picture class="quality-img">
+            <source media="(max-width: 767px)" srcset="assets/images/quality-1.6.png">
+            <source media="(max-width: 1023px)" srcset="assets/images/quality-1.5.png">
             <source media="(min-width: 2300px)" srcset="assets/images/quality-1.4.png">
             <source media="(min-width: 1920px)" srcset="assets/images/quality-1.3.png">
             <source media="(min-width: 1728px)" srcset="assets/images/quality-1.2.png">
             <source media="(min-width: 1515px)" srcset="assets/images/quality-1.1.png">
             <img src="assets/images/quality-1.png" alt="">
         </picture>
-        <h2 class="quality-title">высокие стандарты качества</h2>
+        <h2 class="quality-title">Высокие стандарты качества</h2>
         <ul class="quality-list">
             <li>
-                <img src="assets/images/quality-1.svg" alt="">
-                <p>Сделан на основе полутвердого<br> сыра</p>
+                <img class="quality-list-desc" src="assets/images/quality-1.svg" alt="">
+                <img class="quality-list-mob" src="assets/images/quality-4.svg" alt="">
+                <p class="quality-list-desc">Сделан на основе полутвердого<br> сыра</p>
+                <p class="quality-list-mob">Сделан на основе полутвердого сыра</p>
             </li>
             <li>
-                <img src="assets/images/quality-2.svg" alt="">
+                <img class="quality-list-desc" src="assets/images/quality-2.svg" alt="">
+                <img class="quality-list-mob" src="assets/images/quality-5.svg" alt="">
                 <p>Подходит для горячих и холодных блюд</p>
             </li>
             <li>
-                <img src="assets/images/quality-3.svg" alt="">
-                <p>Без растительных<br> жиров и искусственных красителей</p>
+                <img class="quality-list-desc" src="assets/images/quality-3.svg" alt="">
+                <img class="quality-list-mob" src="assets/images/quality-6.svg" alt="">
+                <p class="quality-list-desc">Без растительных<br> жиров и искусственных красителей</p>
+                <p class="quality-list-mob">Без растительных жиров и искусственных красителей</p>
             </li>
         </ul>
     </section>
@@ -111,9 +167,12 @@
             <div class="compare__layer compare__layer--top">
                 <img src="assets/images/compare-2.png" alt="Сыр My Cheese со вкусом чеддера">
                 <div class="compare__text">
-                    <h3 class="compare__title">пряная ПАПРИКА</h3>
-                    <p class="compare__desc">Уникальное сочетание классического сырного вкуса и  ноток паприки создают идеальный баланс вкуса, который подходит к любым блюда,  добавляя им глубину и пикантность!</p>
-                    <p class="compare__desc-mob">Уникальное сочетание классического сырного вкуса и  ноток паприки создают идеальный баланс вкуса, который подходит к любым блюда,  добавляя им глубину и пикантность!</p>
+                    <h3 class="compare__title">Пряная паприка</h3>
+                    <p class="compare__desc">Уникальное сочетание классического сырного вкуса и ноток паприки создают
+                        идеальный баланс вкуса, который подходит к любым блюда, добавляя им глубину и пикантность!</p>
+                    <p class="compare__desc-mob">Уникальное сочетание классического сырного вкуса и ноток паприки
+                        создают идеальный баланс вкуса, который подходит к любым блюда, добавляя им глубину и
+                        пикантность!</p>
                 </div>
             </div>
 
@@ -132,35 +191,54 @@
             <source media="(min-width: 1920px)" srcset="assets/images/taste-back-1.3.png">
             <source media="(min-width: 1728px)" srcset="assets/images/taste-back-1.2.png">
             <source media="(min-width: 1515px)" srcset="assets/images/taste-back-1.1.png">
-            <img  src="assets/images/taste-back-1.png" alt="">
+            <img src="assets/images/taste-back-1.png" alt="">
         </picture>
         <h2 class="taste-title">Вдохновляйтесь с Président</h2>
-        <p class="taste-desc">Откройте для себя новые грани вкуса.<br>
+        <p class="taste-desc taste-desc-desc">Откройте для себя новые грани вкуса.<br>
+            Мы собрали идеи идеальных закусок, которые станут еще вкуснее с сырным соусом My Cheese</p>
+        <p class="taste-desc taste-desc-mob">Откройте для себя новые грани вкуса.
             Мы собрали идеи идеальных закусок, которые станут еще вкуснее с сырным соусом My Cheese</p>
         <ul class="taste-list">
             <li>
-                <img src="assets/images/taste-1.png" alt="">
+                         <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/taste-1.1.png">
+                    <img src="assets/images/taste-1.png" alt="">
+                </picture>
                 <h3 class="taste-list__title">Запеченные картофельные дольки</h3>
-                <p class="taste-list__desc">Пряные картофельные дольки с копченой паприкой, запеченные до румяной<br> корочки. Идеальная пара для насыщенного сырного соуса «Чеддер» President.</p>
+                <p class="taste-list__desc">Пряные картофельные дольки с копченой паприкой, запеченные до румяной<br>
+                    корочки. Идеальная пара для насыщенного сырного соуса «Чеддер» President.</p>
                 <button type="button" class="taste-list__link" data-popup="popup-potato">Подробнее</button>
             </li>
             <li>
-                <img src="assets/images/taste-2.png" alt="">
+                         <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/taste-2.1.png">
+                    <img src="assets/images/taste-2.png" alt="">
+                </picture>
                 <h3 class="taste-list__title">Домашние наггетсы</h3>
-                <p class="taste-list__desc">Сочное куриное филе в золотистой хрустящей панировке прямо из духовки. Обмакивайте в соус «Чеддер» President и наслаждайтесь 100% домашним вкусом.</p>
+                <p class="taste-list__desc">Сочное куриное филе в золотистой хрустящей панировке прямо из духовки.
+                    Обмакивайте в соус «Чеддер» President и наслаждайтесь 100% домашним вкусом.</p>
                 <button type="button" class="taste-list__link" data-popup="popup-nuggets">Подробнее</button>
             </li>
             <li>
-                <img src="assets/images/taste-3.png" alt="">
+                         <picture>
+                    <!-- мобильные картинки, если они есть, ставьте ПЕРВЫМИ -->
+                    <source media="(max-width: 767px)" srcset="assets/images/taste-3.1.png">
+                    <img src="assets/images/taste-3.png" alt="">
+                </picture>
                 <h3 class="taste-list__title">Пицца-шарики</h3>
-                <p class="taste-list__desc">Горячие шарики с тягучей моцареллой и пепперони под пряным чесночным маслом. Созданы специально для макания <br>в сырные соусы President со вкусом «Паприка» и «Чеддер».</p>
+                <p class="taste-list__desc">Горячие шарики с тягучей моцареллой и пепперони под пряным чесночным маслом.
+                    Созданы специально для макания <br>в сырные соусы President со вкусом «Паприка» и «Чеддер».</p>
                 <button type="button" class="taste-list__link" data-popup="popup-pizza">Подробнее</button>
             </li>
         </ul>
     </section>
     <section id="try" class="try">
         <h2 class="try-title">Готовы попробовать?</h2>
-        <p class="try-desc">Закажите новую линейку Président My Cheese прямо сейчас с быстрой доставкой или найдите на полках любимого супермаркета!</p>
+        <p class="try-desc">Закажите новую линейку Président My Cheese прямо сейчас с быстрой доставкой или найдите на
+            полках любимого супермаркета!</p>
+        <img class="try-img" src="assets/images/try-1.5.png" alt="">
         <div class="try-block">
             <p>Купить на:</p>
             <ul class="try-list">
@@ -177,33 +255,42 @@
         </div>
     </section>
 </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-wrapper">
-                <img src="assets/images/footer-logo-1.svg" alt="">
-                <div class="footer-blocks">
-                    <div class="footer-block1">
-                        <p>Документы</p>
-                        <a class="footer-link" href="https://president-cheese.ru/privacy_policy/">Политика
-                            конфиденциальности</a>
-                        <a class="footer-link" href="https://president-cheese.ru/consent/">Согласие на
-                            обработку персональных данных</a>
-                    </div>
-                    <div class="footer-block2">
-                        <p>АО «Лакталис Восток»</p>
-                        <p>143581, Московская область,<br>
-                            г. Истра, д. Лешково, д. 180</p>
-                    </div>
-                    <div class="footer-block3">
-                        <p>Телефон бесплатной горячей линии в России:</p>
-                        <a href="tel:8 (800) 200-39-93">8 (800) 200-39-93</a>
-                        <a href="mailto:hotline@lactalis.ru">E-mail: hotline@lactalis.ru</a>
-                    </div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrapper">
+            <img class="footer-logo" src="assets/images/footer-logo-1.svg" alt="">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#addition">О продукте</a></li>
+                    <li><a href="#quality">Преимущества</a></li>
+                    <li><a href="#main">Вкусы</a></li>
+                    <li><a href="#taste">Рецепты</a></li>
+                    <li><a href="#try">Где купить</a></li>
+                </ul>
+            </nav>
+            <div class="footer-blocks">
+                <div class="footer-block1">
+                    <p>Документы</p>
+                    <a class="footer-link" href="https://president-cheese.ru/privacy_policy/">Политика
+                        конфиденциальности</a>
+                    <a class="footer-link" href="https://president-cheese.ru/consent/">Согласие на
+                        обработку персональных данных</a>
+                </div>
+                <div class="footer-block2">
+                    <p>АО «Лакталис Восток»</p>
+                    <p>143581, Московская область,<br>
+                        г. Истра, д. Лешково, д. 180</p>
+                </div>
+                <div class="footer-block3">
+                    <p>Телефон бесплатной горячей линии в России:</p>
+                    <a href="tel:8 (800) 200-39-93">8 (800) 200-39-93</a>
+                    <a href="mailto:hotline@lactalis.ru">E-mail: hotline@lactalis.ru</a>
                 </div>
             </div>
-            <p class="footer-etc">© 2026 Président My Cheese. Все права защищены.</p>
         </div>
-    </footer>
+        <p class="footer-etc">© 2026 Président My Cheese. Все права защищены.</p>
+    </div>
+</footer>
 <dialog class="recipe-popup" id="popup-potato" aria-labelledby="popup-potato-title">
     <button type="button" class="recipe-popup__close" data-popup-close aria-label="Закрыть">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -238,7 +325,8 @@
         <!-- Правая скроллящаяся колонка -->
         <div class="recipe-popup__content">
             <div class="recipe-popup__media">
-                <video src="assets/video/potato.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+                <video src="assets/video/potato.mp4" poster="assets/images/potato-poster.jpg" controls preload="none"
+                       playsinline></video>
             </div>
 
             <div class="recipe-popup__media">
@@ -246,8 +334,12 @@
             </div>
 
             <ol class="recipe-popup__steps">
-                <li><b>Разогрейте духовку до 210°С.</b> Картофель тщательно вымойте, нарежьте дольками. Выложите в миску, полейте растительным маслом и перемешайте.</li>
-                <li><b>Смешайте</b> копченую паприку, сушеный чеснок, соль и перец. Посыпьте картофель, перемешайте. Выложите на противень, выстеленный пергаментом.</li>
+                <li><b>Разогрейте духовку до 210°С.</b> Картофель тщательно вымойте, нарежьте дольками. Выложите в
+                    миску, полейте растительным маслом и перемешайте.
+                </li>
+                <li><b>Смешайте</b> копченую паприку, сушеный чеснок, соль и перец. Посыпьте картофель, перемешайте.
+                    Выложите на противень, выстеленный пергаментом.
+                </li>
             </ol>
 
             <div class="recipe-popup__media">
@@ -305,7 +397,8 @@
         <!-- Правая скроллящаяся колонка -->
         <div class="recipe-popup__content">
             <div class="recipe-popup__media">
-                <video src="assets/video/naggets.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+                <video src="assets/video/naggets.mp4" poster="assets/images/potato-poster.jpg" controls preload="none"
+                       playsinline></video>
             </div>
 
             <div class="recipe-popup__media">
@@ -313,10 +406,14 @@
             </div>
 
             <ol class="recipe-popup__steps">
-                <li><b>Разогрейте духовку до 200°С.</b> </li>
-                <li><b>Пересыпьте крошки в глубокую тарелку.</b> Добавьте паприку, сушеные лук<br> и чеснок, посолите и поперчите.</li>
-                <li><b>В другой глубокой тарелке взболтайте яйца с молоком.</b> </li>
-                <li><b>Нарежьте куриное филе кубиками 2½ см. </b> Обмакните куриные кубики <br>в яично-молочной смеси и запанируйте в пряной крошке.</li>
+                <li><b>Разогрейте духовку до 200°С.</b></li>
+                <li><b>Пересыпьте крошки в глубокую тарелку.</b> Добавьте паприку, сушеные лук<br> и чеснок, посолите и
+                    поперчите.
+                </li>
+                <li><b>В другой глубокой тарелке взболтайте яйца с молоком.</b></li>
+                <li><b>Нарежьте куриное филе кубиками 2½ см. </b> Обмакните куриные кубики <br>в яично-молочной смеси и
+                    запанируйте в пряной крошке.
+                </li>
             </ol>
 
             <div class="recipe-popup__media">
@@ -324,7 +421,9 @@
             </div>
 
             <ol class="recipe-popup__steps" start="5">
-                <li><b>Выложите заготовки на противень,</b> выстеленный пергаментом и смазанный маслом, на расстоянии друг от друга. Обильно сбрызните сверху маслом.</li>
+                <li><b>Выложите заготовки на противень,</b> выстеленный пергаментом и смазанный маслом, на расстоянии
+                    друг от друга. Обильно сбрызните сверху маслом.
+                </li>
                 <li><b>Запекайте 15-20 мин.</b>Подавайте с плавленым соусом со вкусом<br> «Чеддер» President.</li>
             </ol>
 
@@ -374,7 +473,8 @@
         <!-- Правая скроллящаяся колонка -->
         <div class="recipe-popup__content">
             <div class="recipe-popup__media">
-                <video src="assets/video/pizza.mp4" poster="assets/images/potato-poster.jpg" controls preload="none" playsinline></video>
+                <video src="assets/video/pizza.mp4" poster="assets/images/potato-poster.jpg" controls preload="none"
+                       playsinline></video>
             </div>
 
             <div class="recipe-popup__media">
@@ -382,8 +482,13 @@
             </div>
 
             <ol class="recipe-popup__steps">
-                <li><b>Разогрейте духовку до 200°С.</b> Колбаски нарежьте тонкими кружками. Моцареллу нарежьте маленькими кубиками.</li>
-                <li><b>Разделите тесто на 20-25 частей.</b> Раскатайте каждую в кружок. Положите в центр немного томатного соуса, кружочки пепперони и кубики моцареллы. Тщательно защипните тесто над начинкой. Скатайте шарик. Положите швом вниз на противень, выстеленный пергаментом.</li>
+                <li><b>Разогрейте духовку до 200°С.</b> Колбаски нарежьте тонкими кружками. Моцареллу нарежьте
+                    маленькими кубиками.
+                </li>
+                <li><b>Разделите тесто на 20-25 частей.</b> Раскатайте каждую в кружок. Положите в центр немного
+                    томатного соуса, кружочки пепперони и кубики моцареллы. Тщательно защипните тесто над начинкой.
+                    Скатайте шарик. Положите швом вниз на противень, выстеленный пергаментом.
+                </li>
             </ol>
 
             <div class="recipe-popup__media">
@@ -391,7 +496,10 @@
             </div>
 
             <ol class="recipe-popup__steps" start="3">
-                <li><b>Растопите сливочное масло.</b> Добавьте щепотку соли, сушеные орегано и чеснок. Перемешайте. Смажьте шарики с помощью кулинарной кисти. Запекайте 15-20 мин. Если пицца-шарики начнут темнеть, накройте<br> фольгой. За 5 минут до готовности посыпьте тертым пармезаном.</li>
+                <li><b>Растопите сливочное масло.</b> Добавьте щепотку соли, сушеные орегано и чеснок. Перемешайте.
+                    Смажьте шарики с помощью кулинарной кисти. Запекайте 15-20 мин. Если пицца-шарики начнут темнеть,
+                    накройте<br> фольгой. За 5 минут до готовности посыпьте тертым пармезаном.
+                </li>
             </ol>
 
             <div class="recipe-popup__media">
@@ -399,7 +507,8 @@
             </div>
 
             <ol class="recipe-popup__steps" start="4">
-                <li><b>Горячие шарики снова смажьте пряным маслом и подавайте с плавлеными соусами со вкусом «Паприка» и «Чеддер» President.</b> </li>
+                <li><b>Горячие шарики снова смажьте пряным маслом и подавайте с плавлеными соусами со вкусом «Паприка» и
+                    «Чеддер» President.</b></li>
             </ol>
 
             <div class="recipe-popup__media">
@@ -410,6 +519,7 @@
     </div>
 </dialog>
 
+<script src="header.js"></script>
 <script src="slider.js"></script>
 <script src="popap.js"></script>
 </body>

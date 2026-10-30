@@ -53,3 +53,13 @@ document.querySelectorAll('[data-compare]').forEach((slider) => {
 
     setPos(50);
 });
+
+document.querySelectorAll('[data-compare]').forEach((compare) => {
+    const update = () => {
+        const pos = parseFloat(compare.style.getPropertyValue('--pos')) || 50;
+        compare.classList.toggle('is-top-active', pos > 50);
+    };
+
+    new MutationObserver(update).observe(compare, { attributes: true, attributeFilter: ['style'] });
+    update();
+});
