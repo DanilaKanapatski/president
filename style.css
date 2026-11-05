@@ -86,9 +86,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 562px 22px 632px;
+    padding: 45px 381px  45px 476px;
     width: 100%;
     background-image: url("assets/images/header-back-5.svg");
+    background-position: center;
     z-index: 3;
     top: 0;
     left: 0;
@@ -96,6 +97,7 @@ body {
 
 .header-block img {
     padding-left: 11px;
+    opacity: 0;
 }
 
 
@@ -697,7 +699,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 11px 372px 41px 442px;
+        padding: 18px 313px 14px 391px;
         width: 100%;
         background-image: url("assets/images/header-back-4.svg");
         z-index: 3;
@@ -708,6 +710,7 @@ body {
     .header-block img {
         padding-left: 11px;
         width: 238px;
+        opacity: 0;
     }
 
 
@@ -1285,7 +1288,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 276px 14px 346px;
+        padding: 12px 280px 12px 349px;
         width: 100%;
         background-image: url("assets/images/header-back-3.svg");
         z-index: 3;
@@ -1295,6 +1298,7 @@ body {
 
     .header-block img {
         padding-left: 11px;
+        opacity: 0;
     }
 
 
@@ -1876,7 +1880,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 179px 18px 229px;
+        padding: 12px 169px 12px 238px;
         width: 100%;
         background-image: url("assets/images/header-back-2.svg");
         z-index: 3;
@@ -1886,6 +1890,7 @@ body {
 
     .header-block img {
         padding-left: 13px;
+        opacity: 0;
     }
 
 
@@ -2449,7 +2454,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 131px 10px 202px;
+        padding: 12px 148px 12px 217px;
         width: 100%;
         background-image: url("assets/images/header-back-1.svg");
         z-index: 3;
@@ -2459,6 +2464,7 @@ body {
 
     .header-block img {
         padding-left: 11px;
+        opacity: 0;
     }
 
     .header-list {
